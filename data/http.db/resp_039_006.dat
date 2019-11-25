@@ -1,0 +1,102 @@
+<header>
+    <nav class="top-nav">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper">
+            <div class="container" style="position: relative; width: 90%">
+
+                <div class="card ee-menu-card ee-hidden corporate-menu-color">
+                    <div class="card-content" style="padding: 0">
+
+                        <ul id="" class="main-menu-ul">
+                            <li class="no-padding main-menu-li">
+                                <a href="/#cabinet"><i class="material-icons left">perm_identity</i>Личный кабинет</a>
+                            </li>
+                            <li class="no-padding main-menu-li">
+                                <a id="m_version"><i class="material-icons left">info_outline</i>О программе</a>
+                            </li>
+                            <li class="no-padding main-menu-li">
+                                <a id="m_logout"><i class="material-icons left">power_settings_new</i>Выход</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a title="Открыть меню" id="ee-menu-button" class="person-identity" style="margin-right: 5px;"><i class="material-icons left">person</i><span class="menu-username">{userFullName}</span><i class="material-icons right" style="margin-left: 5px;">keyboard_arrow_down</i></a>
+                {!<a id="ee-menu-button" class="btn ee-menu-button right grey lighten-2">Меню</a>!}
+                <h1 class="admin_pane">Панель администирования HelpDesk</h1>
+            </div>
+        </div>
+    </nav>
+    <ul id="nav-mobile" class="side-nav fixed admin-nav">
+        <li class="logo">
+            <a id="logo-container" href="/" class="brand-logo"><img src="images/logo_2.png"></a>
+        </li>
+
+        {!{@arrayContainsAny id=roles array="ROLE_ADMIN"}
+            <li class="no-padding bold">
+                <a id="main" class="adm-menu-btn" href="/admin#"><i class="material-icons top-level-icon">home</i>Главная</a>
+            </li>
+        {/arrayContainsAny}!}
+
+        <li class="no-padding bold">
+            <a id="main" class="adm-menu-btn" href="#logging"><i class="material-icons top-level-icon">create</i>Логирование</a>
+        </li>
+        <li class="no-padding bold">
+            <a id="main" class="adm-menu-btn" href="#errors"><i class="material-icons top-level-icon">error</i>Ошибки</a>
+        </li>
+        <li class="no-padding bold">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a data-linkname="userEditMenu" class="collapsible-header"><i class="material-icons top-level-icon left">vpn_key</i>Бизнес единицы<i class="material-icons collapce-icon right">{userEditMenuSign}</i></a>
+                    <div class="collapsible-body" style="{userEditMenu}">
+                        <ul class="ee-custom-menu">
+                            <li><a id="adm_remedyUserRole" class="adm-menu-btn" href="#tickets">Инциденты</a></li>
+                            <li><a id="adm_companyColor" class="adm-menu-btn" href="#tasks">Задачи</a></li>
+                            <li class="center-align time">
+                                <h6>Дата создания</h6>
+                                <div class="flex-wrapper">
+                                    <input id="dateStart" type="text" class="datepicker"> — <input id="dateEnd" type="text" class="datepicker">
+                                </div>
+                                <label for="created_by_portal">
+                                    <div class="card-panel switch">
+                                        Создан порталом
+                                        <span class="badge switch">
+                                            <label>
+                                              <input type="checkbox" id="created_by_portal">
+                                              <span class="lever"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </label>
+                                <button class="update waves-effect waves-light btn">Обновить</button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        {!{@arrayContainsAny id=roles array="ROLE_ADMIN"}
+            <li class="no-padding bold">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a data-linkname="syncMenu" class="collapsible-header"><i class="material-icons top-level-icon left">&#xE627;</i>Синхронизация с Remedy<i class="material-icons collapce-icon right">{syncMenuSign}</i></a>
+                        <div class="collapsible-body" style="{syncMenu}">
+                            <ul class="ee-custom-menu">
+                                <li><a id="adm_ticketSyncFails" class="adm-menu-btn" href="#ticketSyncFails">Ошибки синхронизации</a></li>
+                                <li><a id="adm_synchronizeServices" class="adm-menu-btn" href="#synchronizeServices">Синхронизация сервисов</a></li>
+                                <li><a id="adm_synchronizeTickets" class="adm-menu-btn" href="#synchronizeTickets">Синхронизация заявок</a></li>
+                                <li><a id="adm_synchronizeTasks" class="adm-menu-btn" href="#synchronizeTasks">Синхронизация задач</a></li>
+                                <li><a id="adm_synchronizeTicketComments" class="adm-menu-btn" href="#synchronizeTicketComments">Комментарии заявок</a></li>
+                                <li><a id="adm_synchronizeTaskComments" class="adm-menu-btn" href="#synchronizeTaskComments">Комментарии задач</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        {/arrayContainsAny}!}
+    </ul>
+</header>
+<main id="main_wrapper">
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</main>

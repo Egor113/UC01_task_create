@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\student\Desktop\Ogdanets\Project\UC01_task_create
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\student\desktop\ogdanets\project\uc01_task_create\\logfile.log
+c:\users\student\desktop\ogdanets\project\uc01_task_create\\combined_UC01_task_create.c
+c:\users\student\desktop\ogdanets\project\uc01_task_create\\pre_cci.c

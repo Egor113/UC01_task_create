@@ -1,0 +1,18 @@
+HTTP/2.0 200
+Status: 200
+content-encoding: gzip
+cache-control: max-age=21600
+content-md5: exZVNzZuHAtw/e+lE8m8Rg==
+content-type: text/xml
+date: Mon, 25 Nov 2019 11:07:51 GMT
+etag: 0x8D76EBA19C5F55F
+last-modified: Thu, 21 Nov 2019 19:36:27 GMT
+server: ECAcc (ska/F6E5)
+vary: Accept-Encoding
+x-cache: HIT
+x-ms-blob-type: BlockBlob
+x-ms-lease-status: unlocked
+x-ms-request-id: de7912d3-301e-006d-7e63-a3472c000000
+x-ms-version: 2009-09-19
+content-length: 26292
+

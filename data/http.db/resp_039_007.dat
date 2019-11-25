@@ -1,0 +1,173 @@
+var menuStateCookiesName = "menuState";
+var $sidenav;
+var $hideNavBar;
+var $showNavBar;
+var $headerFooterMain;
+var isHiddenNav;
+
+
+function showSideNav() {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 992) {
+        $sidenav.toggleClass('crutch', false);
+        $sidenav.sideNav('hide');
+    } else {
+        if ($sidenav.css('display') === 'none') {
+            $showNavBar.show();
+        } else {
+            $hideNavBar.show();
+        }
+    }
+    $('a.button-collapse.hamburger').show(0);
+    isHiddenNav = false;
+}
+function hideSideNav() {
+    $('#nav-mobile').sideNav('hide');
+    $sidenav.hide();
+    $showNavBar.hide();
+    $hideNavBar.hide();
+    $('a.button-collapse.hamburger').hide(0);
+    $headerFooterMain.css('padding-left', '0');
+    isHiddenNav = true;
+}
+
+function wrapper(template, user, rights) {
+    var data = {};
+    data['roles'] = rights.roles;
+    data['userFullName'] = user.fullName;
+    dust.renderSource(template, data, function (err, out) {
+        var $wrapper = $('#app');
+        $wrapper.empty();
+        $wrapper.append(out);
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+
+        $sidenav = $('#nav-mobile');
+        $hideNavBar = $('#hideNavBar');
+        $showNavBar = $('#showNavBar');
+        $headerFooterMain = $('header, footer, main');
+
+        //Автоматическое скрытие бокового меню
+        $('.menu-al').on('click', function () {
+            if (screen.width <= 992) {
+                $('.button-collapse').sideNav('hide');
+            }
+        });
+
+        var $eeMenu = $('.ee-menu-card');
+
+        //Показываем или прячем меню
+        $('#ee-menu-button').on('click', function (e) {
+            e.stopPropagation();
+            $eeMenu.toggleClass('ee-hidden');
+        });
+
+        $('body').on('click', function () {
+            if (!$eeMenu.hasClass('ee-hidden')) {
+                $eeMenu.addClass('ee-hidden')
+            }
+        });
+
+        //Кнопка выхода
+        var $mLogout = $('#m_logout');
+        $mLogout.unbind('click');
+        $mLogout.on('click', function (e) {
+            e.stopPropagation();
+            $.ajax({
+                type: 'GET',
+                url: 'api/logout'
+            }).done(function () {
+                window.location = '/login';
+            });
+        });
+
+        //Контроллер раскрытия меню
+        var collapsibleMenu = $('.collapsible-header');
+        collapsibleMenu.each(function () {
+            if (!$(this).find('i.collapce-icon').text()) {
+                $(this).find('i.collapce-icon').text('add')
+            }
+        });
+
+        var prevWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (prevWidth > 992) {
+            $sidenav.toggleClass('crutch', true);
+        } else {
+            $hideNavBar.hide();
+            $showNavBar.hide();
+        }
+        $(window).resize(function () {
+            var currentWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if (prevWidth <= 992 && currentWidth > 992 && !isHiddenNav){
+                $sidenav.toggleClass('crutch', true);
+                $showNavBar.trigger('click');
+            } else if (prevWidth > 992 && currentWidth <= 992 && !isHiddenNav) {
+                $sidenav.toggleClass('crutch', false);
+                $hideNavBar.hide();
+                $showNavBar.hide();
+                $sidenav.show();
+                $sidenav.sideNav('hide');
+                $headerFooterMain.css('padding-left', '');
+            }
+            prevWidth = currentWidth;
+        });
+        $(".button-collapse").sideNav({
+            onOpen: function(){
+                $sidenav.toggleClass('crutch', true);
+                if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 992) {
+                    $hideNavBar.show();
+                }
+            },
+            onClose: function(){
+                if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 992) {
+                    $sidenav.toggleClass('crutch', false);
+                }
+            }
+        });
+
+
+        $hideNavBar.on('click', function () {
+            $sidenav.hide();
+            $('main, footer, header').css('padding-left', 'unset');
+            $hideNavBar.hide();
+            $showNavBar.show()
+        });
+
+        $showNavBar.on('click', function () {
+            $sidenav.show();
+            $('main, footer, header').css('padding-left', '300px');
+            $hideNavBar.show();
+            $showNavBar.hide();
+        });
+
+
+        $sidenav.find('.collapsible').collapsible({
+            onOpen: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', true); }, // Callback for Collapsible open
+            onClose: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', false); } // Callback for Collapsible close
+        });
+
+        $sidenav.find('.collapsible-header').on('click', function(e){
+            location.hash = "#tickets";
+        });
+
+        //Инициализация datapicker
+        $sidenav.find('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            closeOnSelect: false, // Close upon selecting a date,
+            // Правки для достижения кроссбраузерности
+            onOpen: function () {
+                $sidenav.css('overflow', 'hidden').css('position', 'absolute')
+                    .css('top', window.scrollY).css('z-index', 'unset');
+            },
+            onClose: function () {
+                $sidenav.css('overflow', 'auto').css('position', 'fixed')
+                    .css('top', '0').css('z-index', '999');
+                // Убираем активный элемент, чтобы при фокусе не открывался календарь
+                document.activeElement.blur();
+            }
+        });
+
+        loadContent();
+    });
+}

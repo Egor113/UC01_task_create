@@ -1,0 +1,11 @@
+GET /api/user/info HTTP/1.1
+Accept: */*
+X-Requested-With: XMLHttpRequest
+Referer: http://learning2.pflb.ru:56902/
+Accept-Language: ru,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: learning2.pflb.ru:56902
+Connection: Keep-Alive
+Cookie: sessionExpired=false; SESSION=bb136cee-333d-43a9-8bb3-1c2a8bd6f82d; currentCompany=0; currentUser=master; PFLB.pre.login.link=null
+

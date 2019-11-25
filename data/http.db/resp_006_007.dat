@@ -1,0 +1,4 @@
+a4
+{"timestamp":"25-11-2019 13:49:32","status":401,"error":"Unauthorized","message":"Full authentication is required to access this resource","path":"/api/checkLogin"}
+0
+

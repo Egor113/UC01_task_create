@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HTTPSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="21">
+  <HTTPTask id="71" url="http://learning2.pflb.ru:56902/api/ticket/file/" origin="Primary" startDateTime="2019-11-25T14:07:54.491+03:00" startTime="4320">
+    <HTTPRequest method="POST" />
+  </HTTPTask>
+</HTTPSnapshot>
