@@ -2620,14 +2620,6 @@ Action()
 
 	web_add_cookie("sessionExpired=true; DOMAIN=learning2.pflb.ru");
 
-	web_add_cookie("SRCHUID=V=2&GUID=225AA72D8B8C4225A329ED28D9C749D5&dmnchg=1; DOMAIN=c.urs.microsoft.com");
-
-	web_add_cookie("SRCHD=AF=NOFORM; DOMAIN=c.urs.microsoft.com");
-
-	web_add_cookie("MC1=GUID=2c29678b14674620829ea1e367e840d9&HASH=2c29&LV=201910&V=4&LU=1570625008555; DOMAIN=c.urs.microsoft.com");
-
-	web_add_cookie("SRCHUSR=DOB=20190711; DOMAIN=c.urs.microsoft.com");
-
 	web_url("login", 
 		"URL=http://learning2.pflb.ru:56902/login", 
 		"TargetFrame=", 
@@ -2643,14 +2635,6 @@ Action()
 		"LAST");
 
 	web_set_sockets_option("SSL_VERSION", "TLS1.2");
-
-	web_add_cookie("SRCHUID=V=2&GUID=225AA72D8B8C4225A329ED28D9C749D5&dmnchg=1; DOMAIN=iecvlist.microsoft.com");
-
-	web_add_cookie("SRCHD=AF=NOFORM; DOMAIN=iecvlist.microsoft.com");
-
-	web_add_cookie("MC1=GUID=2c29678b14674620829ea1e367e840d9&HASH=2c29&LV=201910&V=4&LU=1570625008555; DOMAIN=iecvlist.microsoft.com");
-
-	web_add_cookie("SRCHUSR=DOB=20190711; DOMAIN=iecvlist.microsoft.com");
 
 	web_add_header("UA-CPU", 
 		"AMD64");
@@ -2674,6 +2658,8 @@ Action()
 
 	lr_think_time(87);
 
+	web_set_user("{Login}", "{Password}", "learning2.pflb.ru:56902");
+	
 	web_submit_data("login_2", 
 		"Action=http://learning2.pflb.ru:56902/api/login", 
 		"Method=POST", 
@@ -2682,14 +2668,14 @@ Action()
 		"Snapshot=t4.inf", 
 		"Mode=HTML", 
 		"ITEMDATA", 
-		"Name=login", "Value=master", "ENDITEM", 
-		"Name=password", "Value=123", "ENDITEM", 
+		"Name=login", "Value={Login}", "ENDITEM", 
+		"Name=password", "Value={Password}", "ENDITEM", 
 		"Name=rememberMe", "Value=false", "ENDITEM", 
 		"LAST");
 
 	web_add_cookie("currentCompany=0; DOMAIN=learning2.pflb.ru");
 
-	web_add_cookie("currentUser=master; DOMAIN=learning2.pflb.ru");
+	web_add_cookie("currentUser={Login}; DOMAIN=learning2.pflb.ru");
 
 	web_add_cookie("PFLB.pre.login.link=null; DOMAIN=learning2.pflb.ru");
 
@@ -2895,7 +2881,7 @@ Action()
 		"Snapshot=t21.inf", 
 		"Mode=HTML", 
 		"ITEMDATA", 
-		"Name=files", "Value=file.txt", "File=Yes", "ENDITEM", 
+		"Name=files", "Value=file.txt", "File=no", "ENDITEM", 
 		"LAST");
 
 	lr_think_time(8);

@@ -1,0 +1,3 @@
+"{"text":"Some action","header":"Отсутствие уборки прилегающе�\xB9 т"
+"ерритории","ticketStateId":0,"serviceId":"2782","files":[4383],"inventoryNumberId":"6"
+"","shopId":"4"}"
