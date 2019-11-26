@@ -1,1 +1,1 @@
-[{"stateId":1,"stateName":"Выполняется","count":4},{"stateId":-1,"stateName":"Новый","count":173},{"stateId":2,"stateName":"Решен","count":4},{"stateId":4,"stateName":"Отменен","count":2}]
+{"roles":["ROLE_ENGINEER","ROLE_MASTER","ROLE_SHOP_DIRECTOR"],"actions":{},"customer":false}

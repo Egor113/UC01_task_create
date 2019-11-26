@@ -2599,8 +2599,11 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
-	 
 	int j;
+	int shopID_index;
+	int inventoryNumberId_index;
+	long FileVarriable;
+	char FileLocation[1024] = "file_id.txt";
 
 	web_url("learning2.pflb.ru:56902", 
 		"URL=http://learning2.pflb.ru:56902/", 
@@ -2778,12 +2781,14 @@ Action()
 	lr_think_time(95);
 
 	lr_start_transaction("UC01_TR03_Incident_data");
-
-	web_reg_save_param("location",
-                 "LB=\"location\":\"",
-                 "RB=\"",
-				 "Ord=All",
-				 "LAST");
+	
+	web_reg_save_param_json(
+        "ParamName=shopIDs",
+        "QueryString=$..id",
+        "SelectALL=Yes",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "LAST");
 	
 	web_url("shops", 
 		"URL=http://learning2.pflb.ru:56902/api/shops?q=&page=0", 
@@ -2794,6 +2799,10 @@ Action()
 		"Snapshot=t12.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	shopID_index = rand() % atoi(lr_eval_string("{shopIDs_count}")) + 1;
+	
+	lr_save_string(lr_paramarr_idx("shopIDs", shopID_index), "shopID");
 
 	web_url("shops_2", 
 		"URL=http://learning2.pflb.ru:56902/api/shops?q=&page=0", 
@@ -2819,9 +2828,8 @@ Action()
 		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		"LAST");
-
-	 
 	
+
 	web_reg_save_param_json(
         "ParamName=serviceIdS",
         "QueryString=$..services..id",
@@ -2837,14 +2845,9 @@ Action()
         "SEARCH_FILTERS",
         "Scope=Body",
         "LAST");
-
- 
- 
- 
- 
-	              	
+   	
 	web_url("treeview", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/treeview?shopid=4", 
+		"URL=http://learning2.pflb.ru:56902/api/user/catalog/treeview?shopid={shopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -2852,33 +2855,11 @@ Action()
 		"Snapshot=t15.inf", 
 		"Mode=HTML", 
 		"LAST");
-		
-		
+	
 	j = rand() % atoi(lr_eval_string("{serviceIdS_count}")) + 1;
 	
-	lr_save_string("", "c_buffer");
-	
-	lr_param_sprintf("c_buffer", "%s{\"text\":\"Some action\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [4383],\"inventoryNumberId\": \"6\",\"shopId\": \"4\"}",
-		   lr_eval_string("{c_buffer}"),
-		   lr_paramarr_idx("serviceNames", j),
-		   lr_paramarr_idx("serviceIdS", j));
-	
-	lr_message("c_buffer");
-	
-	
- 
-
- 
-	
- 
-	
- 
- 
-	     
-
-	        
-
-
+	lr_save_string(lr_paramarr_idx("serviceIdS", j), "serviceId");
+		
 	web_url("children_3", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/146/children/", 
 		"TargetFrame=", 
@@ -2908,9 +2889,18 @@ Action()
 		"Snapshot=t18.inf", 
 		"Mode=HTML", 
 		"LAST");
-
+	
+	web_reg_save_param_json(
+        "ParamName=inventoryNumbers",
+        "QueryString=$..services..name",
+        "SelectALL=Yes",
+        "Notfound=warning",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "LAST");
+	
 	web_url("inventoryNumbers", 
-		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId=2782&shopId=4", 
+		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId={serviceId}&shopId={shopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -2918,11 +2908,12 @@ Action()
 		"Snapshot=t19.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
 
 	lr_think_time(5);
 
 	web_url("inventoryNumbers_2", 
-		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?shopId=4&serviceId=2782&serviceId=2782&q=&page=0", 
+		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?shopId={shopID}&serviceId={serviceId}&serviceId=2782&q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -2943,11 +2934,50 @@ Action()
 		"Snapshot=t21.inf", 
 		"Mode=HTML", 
 		"ITEMDATA", 
-		"Name=files", "Value=file.txt", "File=yes", "ENDITEM", 
+		"Name=files", "Value={File}", "File=yes", "ENDITEM", 
 		"LAST");
 
 	lr_think_time(8);
 
+	lr_save_string("", "c_buffer");
+	
+	if (atoi(lr_eval_string("{inventoryNumbers_count}")) == 0){
+		
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [4383],\"shopId\": \"%s\"}",
+		   lr_eval_string("{c_buffer}"),
+		   lr_eval_string("{Text}"),
+		   lr_paramarr_idx("serviceNames", j),
+		   lr_eval_string("{serviceId}"),
+		   lr_eval_string("{shopID}"));
+	}
+	else {
+		inventoryNumberId_index = rand() % atoi(lr_eval_string("{inventoryNumbers_count}")) + 1;
+		lr_save_string(lr_paramarr_idx("inventoryNumbers", inventoryNumberId_index), "inventoryNumberId");
+		
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [4383],\"inventoryNumberId\": \"%s\",\"shopId\": \"%s\"}",
+		   lr_eval_string("{c_buffer}"),
+		   lr_eval_string("{Text}"),
+		   lr_paramarr_idx("serviceNames", j),
+		   lr_eval_string("{serviceId}"),
+		   lr_eval_string("{inventoryNumberId}"),
+		   lr_eval_string("{shopID}"));
+	}
+	
+
+	
+	lr_message("c_buffer");
+	
+	web_reg_save_param_json(
+        "ParamName=ID",
+        "QueryString=$..id",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "LAST");
+	
+	 
+	 
+	 
+	
 	web_custom_request("ticket_2", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/", 
 		"Method=POST", 
@@ -2960,6 +2990,10 @@ Action()
 		"EncType=application/json; charset=utf-8", 
 		"BodyBinary={c_buffer}", 
 		"LAST");
+	
+	 FileVarriable = fopen (FileLocation,"w+");
+     fprintf (FileVarriable, "%s \n", lr_eval_string("{ID}")); 
+     fclose (FileVarriable);
 	
 	(web_remove_auto_header("X-Requested-With", "ImplicitGen=Yes", "LAST"));
 

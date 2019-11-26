@@ -1,0 +1,463 @@
+ class="post-template-default single single-post postid-1133 single-format-standard custom-background customizer-styles-applied no-featured-image categories-hidden highlander-enabled highlander-light">
+
+	<a class="screen-reader-text skip-link" href="#content">Перейти к содержимому</a>
+
+	<header class="header section small-padding bg-dark bg-image" style="background-image: url(https://loadtestweb.files.wordpress.com/2019/01/cropped-ladybug-1209898_1920.jpg);" role="banner">
+
+		<a href="https://loadtestweb.info/" rel="home">
+			<div class="cover"></div>
+		</a>
+
+		<a href="#search-container" class="screen-reader-text search-toggle">Поиск</a>
+		<div class="header-search-block bg-graphite hidden" id="search-container">
+			<form role="search" method="get" class="search-form" action="https://loadtestweb.info/">
+				<label>
+					<span class="screen-reader-text">Найти:</span>
+					<input type="search" class="search-field" placeholder="Поиск&hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Поиск" />
+			</form>		</div> <!-- /header-search-block -->
+
+		<div class="header-inner section-inner">
+
+			
+							<p class="site-title"><a href="https://loadtestweb.info/" rel="home">«Тестирование производительности»</a></p>
+							<p class="site-description">учебные материалы по нагрузке</p>
+			
+			
+		</div> <!-- /header-inner -->
+	</header> <!-- /header -->
+
+	<div class="navigation section no-padding bg-dark">
+		<nav id="site-navigation" class="navigation-inner section-inner clear" role="navigation">
+			<button class="nav-toggle fleft" aria-controls="primary-menu" aria-expanded="false">Меню</button>
+			<div class="main-navigation">
+				<ul id="primary-menu" class="menu"><li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="/">Home</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="https://loadtestweb.info/about/">О проекте</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://loadtestweb.info/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/">Контакты</a></li>
+</ul>			</div>
+
+			<a class="search-toggle search-icon fright" href="#">Открыть поиск</a>
+		</nav> <!-- /navigation-inner -->
+	</div> <!-- /navigation -->
+
+<div class="wrapper section medium-padding">
+	<main class="section-inner clear" role="main">
+
+				<div class="content clear center" id="content">
+
+			
+
+	<article id="post-1133" class="post-1133 post type-post status-publish format-standard has-post-thumbnail hentry category-4524357 tag-featured tag-git tag-jmeter clear fallback-thumbnail">
+
+		<header class="post-header"><h1 class="post-title entry-title"><a href="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/" rel="bookmark">Maven: автоустановка Apache.JMeter</a></h1></header>			<div class="featured-media">
+				<img width="1280" height="800" src="https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=1280" class="attachment-baskerville-2-post-image size-baskerville-2-post-image wp-post-image" alt="" srcset="https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg 1280w, https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=150 150w, https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=300 300w, https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=768 768w, https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=1024 1024w" sizes="(max-width: 1280px) 100vw, 1280px" data-attachment-id="955" data-permalink="https://loadtestweb.info/2017/10/17/install-apache-jmeter/look-com-ua-109715/" data-orig-file="https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg" data-orig-size="1280,800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="look.com.ua-109715" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2017/08/look-com-ua-109715.jpg?w=736" />			</div> <!-- /featured-media -->
+					<div class="post-content clear">
+				<p>В одной из записей (<a href="https://loadtestweb.wordpress.com/2017/10/17/%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b0-%d0%b8-%d0%bd%d0%b0%d1%81%d1%82%d1%80%d0%be%d0%b9%d0%ba%d0%b0-apache-jmeter/">Установка и настройка Apache.JMeter</a>) рассказывал про ручную установку и настройку Apache.JMeter. Сейчас расскажу про автоматизацию этого процесса.</p>
+<p>В результате &#8212; все параметры настройки JMeter будут храниться в системе контроля версий. Тесты будут легко воспроизводимы, а процесс приблизится к тому, чтобы встроить нагрузку в CI/CD-конвейер.</p>
+<pre>mvn verify или mvn jmeter:test</pre>
+<p>И магия &#8212; скачался jmeter, плагины, запустился тест, сформировался отчёт.</p>
+<p>Результат настройки в репозитории:</p>
+<ul>
+<li><a href="https://github.com/polarnik/jmeter-loadtestweb" target="_blank" rel="noopener">https://github.com/polarnik/jmeter-loadtestweb</a></li>
+</ul>
+<p><span id="more-1133"></span></p>
+<h1>Основа статьи</h1>
+<ul>
+<li><a href="https://jmeter.apache.org/" rel="nofollow">https://jmeter.apache.org/</a></li>
+<li><a href="https://maven.apache.org/" rel="nofollow">https://maven.apache.org/</a></li>
+<li><a href="https://github.com/jmeter-maven-plugin" rel="nofollow">https://github.com/jmeter-maven-plugin</a></li>
+<li><a href="https://www.blazemeter.com/blog/how-use-jmeter-maven-plugin" rel="nofollow">https://www.blazemeter.com/blog/how-use-jmeter-maven-plugin</a></li>
+<li><a href="https://github.com/undera/jmeter-plugins" rel="nofollow">https://github.com/undera/jmeter-plugins</a></li>
+<li><a href="https://jmeter-plugins.org/" rel="nofollow">https://jmeter-plugins.org/</a></li>
+</ul>
+<p>Статья опирается на труды других людей, но имеет свою оригинальность.</p>
+<h1>Создание пустого maven проекта</h1>
+<p>Проект можно создать вручную, а можно использовать maven archetype.</p>
+<h2>Ручное создание проекта</h2>
+<p>Создать каталог, назвав его &#171;jmeter-loadtestweb&#187;. Внутри каталога создать структуру каталогов пустого java-проекта:</p>
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> jmeter-loadtestweb
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> src
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> main
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> java</li>
+</ul>
+</li>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> test
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> java</li>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> jmeter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img data-attachment-id="1136" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/xml/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png" data-orig-size="16,16" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="xml" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" class="alignnone size-full wp-image-1136" src="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=736" alt="xml"   /> pom.xml</li>
+</ul>
+</li>
+</ul>
+<p>И разместить в каталоге файл <img data-attachment-id="1136" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/xml/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png" data-orig-size="16,16" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="xml" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" class="alignnone size-full wp-image-1136" src="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=736" alt="xml"   /> pom.xml следующего содержимого:</p>
+<pre><span style="color:#333333;">&lt;project</span> <span style="color:#333333;">xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color:#333333;">         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;</span>
+    <span style="color:#333333;">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>groupId</strong></span><span style="color:#333333;">&gt;</span><span style="color:#800000;">com.loadtestweb</span><span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>groupId</strong></span><span style="color:#333333;">&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>artifactId</strong></span><span style="color:#333333;">&gt;</span><span style="color:#800000;">jmeter-loadtestweb</span><span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>artifactId</strong></span><span style="color:#333333;">&gt;</span>
+    <span style="color:#333333;">&lt;packaging&gt;jar&lt;/packaging&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>version</strong></span><span style="color:#333333;">&gt;<span style="color:#800000;">0.1.0</span>&lt;/</span><span style="color:#003366;"><strong>version</strong></span><span style="color:#333333;">&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>name</strong></span><span style="color:#333333;">&gt;</span><span style="color:#800000;">jmeter-loadtestweb</span><span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>name</strong></span><span style="color:#333333;">&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>description</strong></span><span style="color:#333333;">&gt;</span><span style="color:#800000;">Apache.JMeter test for loadtestweb</span><span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>description</strong></span><span style="color:#333333;">&gt;</span>
+
+    <span style="color:#999999;">&lt;!-- Properties --&gt;</span>
+    <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>properties</strong></span><span style="color:#333333;">&gt;</span>
+        <span style="color:#999999;">&lt;!-- Test name --&gt;</span>
+        <span style="color:#333333;">&lt;</span><span style="color:#003366;"><strong>performancetest.script</strong></span><span style="color:#333333;">&gt;</span><span style="color:#800000;">jmeter-loadtestweb</span><span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>performancetest.script</strong></span><span style="color:#333333;">&gt;</span>
+    <span style="color:#333333;">&lt;/</span><span style="color:#003366;"><strong>properties</strong></span><span style="color:#333333;">&gt;</span>
+
+    <span style="color:#999999;">&lt;!-- Build Settings --&gt;</span>
+<span style="color:#333333;">    &lt;build&gt;</span>
+<span style="color:#333333;">        &lt;plugins&gt;</span>
+
+<span style="color:#333333;">            &lt;plugin&gt;</span>
+<span style="color:#333333;">                &lt;groupId&gt;com.lazerycode.jmeter&lt;/groupId&gt;</span>
+<span style="color:#333333;">                &lt;artifactId&gt;jmeter-maven-plugin&lt;/artifactId&gt;</span>
+<span style="color:#333333;">                &lt;<span style="color:#003366;"><strong>version</strong></span>&gt;<span style="color:#800000;">2.8.1</span>&lt;/<span style="color:#003366;"><strong>version</strong></span>&gt;</span>
+<span style="color:#333333;">                &lt;executions&gt;</span>
+<span style="color:#999999;">                    &lt;!-- Run JMeter tests --&gt;</span>
+<span style="color:#333333;">                    &lt;execution&gt;</span>
+<span style="color:#333333;">                        &lt;id&gt;jmeter-tests&lt;/id&gt;</span>
+<span style="color:#333333;">                        &lt;goals&gt;</span>
+<span style="color:#333333;">                            &lt;goal&gt;jmeter&lt;/goal&gt;</span>
+<span style="color:#333333;">                        &lt;/goals&gt;</span>
+<span style="color:#333333;">                    &lt;/execution&gt;</span>
+
+<span style="color:#999999;">                    &lt;!-- Fail build on errors in test --&gt;</span>
+<span style="color:#333333;">                    &lt;execution&gt;</span>
+<span style="color:#333333;">                        &lt;id&gt;jmeter-check-results&lt;/id&gt;</span>
+<span style="color:#333333;">                        &lt;goals&gt;</span>
+<span style="color:#333333;">                            &lt;goal&gt;results&lt;/goal&gt;</span>
+<span style="color:#333333;">                        &lt;/goals&gt;</span>
+<span style="color:#333333;">                    &lt;/execution&gt;</span>
+<span style="color:#333333;">                &lt;/executions&gt;</span>
+
+<span style="color:#333333;">                &lt;configuration&gt;</span>
+<span style="color:#333333;">                    &lt;testFilesIncluded&gt;</span>
+<span style="color:#333333;">                        &lt;<span style="color:#003366;"><strong>jMeterTestFile</strong></span>&gt;<span style="color:#008000;">${performancetest.script}</span>&lt;/<span style="color:#003366;"><strong>jMeterTestFile</strong></span>&gt;</span>
+<span style="color:#333333;">                    &lt;/testFilesIncluded&gt;</span>
+<span style="color:#333333;">                    &lt;<span style="color:#003366;"><strong>jmeterVersion</strong></span>&gt;<span style="color:#800000;">5.0</span>&lt;/<span style="color:#003366;"><strong>jmeterVersion</strong></span>&gt;</span>
+
+<span style="color:#999999;">                    &lt;!-- Configuring the jvm that the jmeter process runs in</span>
+<span style="color:#999999;">                    https://github.com/jmeter-maven-plugin/jmeter-maven-plugin/wiki/Configuring-the-jvm-that-the-jmeter-process-runs-in</span>
+<span style="color:#999999;">                    http://reins.altervista.org/java/A_Collection_of_JVM_Options_MP.html</span>
+<span style="color:#999999;">                    https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html</span>
+<span style="color:#999999;">                    --&gt;</span>
+<span style="color:#333333;">                    &lt;jMeterProcessJVMSettings&gt;</span>
+<span style="color:#333333;">                        &lt;<span style="color:#003366;"><strong>xms</strong></span>&gt;<span style="color:#800000;">1024</span>&lt;/<span style="color:#003366;"><strong>xms</strong></span>&gt;</span>
+<span style="color:#333333;">                        &lt;<span style="color:#003366;"><strong>xmx</strong></span>&gt;<span style="color:#800000;">2048</span>&lt;/<span style="color:#003366;"><strong>xmx</strong></span>&gt;</span>
+<span style="color:#333333;">                        &lt;arguments&gt;</span>
+<span style="color:#333333;">                            &lt;argument&gt;-XX:MaxMetaspaceSize=256m&lt;/argument&gt;</span>
+
+<span style="color:#333333;">                            &lt;argument&gt;-XX:+UseG1GC&lt;/argument&gt;</span>
+<span style="color:#333333;">                            &lt;argument&gt;-XX:MaxGCPauseMillis=100&lt;/argument&gt;</span>
+<span style="color:#333333;">                            &lt;argument&gt;-XX:G1ReservePercent=20&lt;/argument&gt;</span>
+
+<span style="color:#333333;">                            &lt;argument&gt;-Duser.language=en&lt;/argument&gt;</span>
+<span style="color:#333333;">                            &lt;argument&gt;-Duser.region=EN&lt;/argument&gt;</span>
+
+<span style="color:#333333;">                            &lt;argument&gt;-Dfile.encoding=UTF-8&lt;/argument&gt;</span>
+
+<span style="color:#333333;">                            &lt;argument&gt;-XX:-HeapDumpOnOutOfMemoryError&lt;/argument&gt;</span>
+<span style="color:#333333;">                            &lt;argument&gt;-server&lt;/argument&gt;</span>
+
+<span style="color:#333333;">                        &lt;/arguments&gt;</span>
+<span style="color:#333333;">                    &lt;/jMeterProcessJVMSettings&gt;</span>
+
+<span style="color:#333333;">                    &lt;testResultsTimestamp&gt;false&lt;/testResultsTimestamp&gt;</span>
+<span style="color:#333333;">                    &lt;<strong><span style="color:#003366;">overrideRootLogLevel</span></strong>&gt;<span style="color:#800000;">DEBUG</span>&lt;/<span style="color:#003366;"><strong>overrideRootLogLevel</strong></span>&gt;</span>
+<span style="color:#333333;">                    &lt;suppressJMeterOutput&gt;false&lt;/suppressJMeterOutput&gt;</span>
+<span style="color:#333333;">                    &lt;ignoreResultFailures&gt;true&lt;/ignoreResultFailures&gt;</span>
+<span style="color:#333333;">                    &lt;<span style="color:#003366;"><strong>guiTestFile</strong></span>&gt;<span style="color:#008000;">${project.basedir}</span>/src/test/jmeter/<span style="color:#008000;">${performancetest.script}</span>&lt;/<span style="color:#003366;"><strong>guiTestFile</strong></span>&gt;</span>
+
+<span style="color:#333333;">                    &lt;propertiesJMeter&gt;</span>
+<span style="color:#333333;">                        &lt;jmeter.save.saveservice.thread_counts&gt;true&lt;/jmeter.save.saveservice.thread_counts&gt;</span>
+<span style="color:#333333;">                        &lt;jmeter.save.saveservice.subresults&gt;true&lt;/jmeter.save.saveservice.subresults&gt;</span>
+<span style="color:#333333;">                        &lt;sample_variables&gt;&lt;/sample_variables&gt;</span>
+<span style="color:#999999;">                        &lt;!-- # Disable sent statistics to https://jmeter-plugins.org/stats/ --&gt;</span>
+<span style="color:#333333;">                        &lt;jpgc.repo.sendstats&gt;false&lt;/jpgc.repo.sendstats&gt;</span>
+<span style="color:#333333;">                    &lt;/propertiesJMeter&gt;</span>
+<span style="color:#333333;">                &lt;/configuration&gt;</span>
+<span style="color:#333333;">            &lt;/plugin&gt;</span>
+<span style="color:#333333;">        &lt;/plugins&gt;</span>
+<span style="color:#333333;">    &lt;/build&gt;
+</span><span style="color:#333333;">&lt;/project&gt;</span></pre>
+<p>Каталог /src/test/jmeter используется для хранения jmx-файлов (скриптов jmeter), property-файлов (файлов настройки), дополнительных скриптов, например, groovy-скриптов.</p>
+<h3>Назначение каталогов</h3>
+<p>Назначение каталогов для jmeter-проекта может быть следующим:</p>
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> jmeter-loadtestweb
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> src
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> main
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> <strong>java</strong> &#8212; утилиты, классы JMeter Function, классы для <a href="http://jmeter.apache.org/usermanual/component_reference.html#Java_Request" target="_blank" rel="noopener">Java Request</a> (пример <a href="https://github.com/apache/jmeter/blob/trunk/src/protocol/java/org/apache/jmeter/protocol/java/test/JavaTest.java" target="_blank" rel="noopener">JavaTest</a> и <a href="https://github.com/apache/jmeter/blob/trunk/src/protocol/java/org/apache/jmeter/protocol/java/test/SleepTest.java" target="_blank" rel="noopener">SleepTest</a>) &#8212; программный код, с помощью которого можно создавать нагрузку</li>
+</ul>
+</li>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> test
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> <strong>java</strong> &#8212; jUnit-тесты для <a href="http://jmeter.apache.org/usermanual/component_reference.html#JUnit_Request" target="_blank" rel="noopener">jUnit Request</a></li>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> <strong>jmeter</strong> &#8212; каталог, который будет использоваться плагином jmeter-maven-plugin, в нем можно создавать ещё подкаталоги</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Назначение тегов в pom.xml</h3>
+<p>Некоторые интересные теги в pom.xml выделил. На эти значения стоит обратить внимание или заменить на свои.</p>
+<h4>Информация о проекте</h4>
+<p>Обязательными атрибутами являются groupId и artifactId.</p>
+<pre><span style="color:#333333;">    &lt;<span style="color:#003366;"><strong>groupId</strong></span>&gt;<span style="color:#800000;">com.loadtestweb</span>&lt;/<span style="color:#003366;"><strong>groupId</strong></span>&gt;
+    &lt;<span style="color:#003366;"><strong>artifactId</strong></span>&gt;<span style="color:#800000;">jmeter-loadtestweb</span>&lt;/<span style="color:#003366;"><strong>artifactId</strong></span>&gt;</span></pre>
+<p>Также нужно указать номер версии, название и описание теста.</p>
+<pre><span style="color:#333333;">    &lt;<span style="color:#003366;"><strong>version</strong></span>&gt;<span style="color:#800000;">0.1.0</span>&lt;/<span style="color:#003366;"><strong>version</strong></span>&gt;</span>
+<span style="color:#333333;">    &lt;<span style="color:#003366;"><strong>name</strong></span>&gt;<span style="color:#800000;">jmeter-loadtestweb</span>&lt;/<span style="color:#003366;"><strong>name</strong></span>&gt;</span>
+<span style="color:#333333;">    &lt;<span style="color:#003366;"><strong>description</strong></span>&gt;<span style="color:#800000;">Apache.JMeter test for loadtestweb</span>&lt;/<span style="color:#003366;"><strong>description</strong></span>&gt;</span></pre>
+<p>Выше указаны примеры значений. Их можно заменить на свои.</p>
+<h4>Настройки</h4>
+<p>Для удобства правки часто изменяющиеся параметры рекомендуется выносить в секцию <strong>properties</strong>. Так в эту секцию вынесено имя файла с тестом.</p>
+<p>Сюда же можно вынести номер версии Apache.JMeter, версии плагинов &#8212; те параметры, которые с высокой вероятностью будут меняться в дальнейшем.</p>
+<p>Позже в раздел <strong>properties</strong> мы добавим параметры профиля нагрузки &#8212; количество виртуальных пользователей, интенсивность выполнения.</p>
+<pre><span style="color:#999999;">&lt;!-- Properties --&gt;</span>
+<span style="color:#333333;">&lt;<span style="color:#003366;"><strong>properties</strong></span>&gt;</span>
+<span style="color:#999999;">    &lt;!-- Test name --&gt;</span>
+<span style="color:#333333;">    &lt;<span style="color:#003366;"><strong>performancetest.script</strong></span>&gt;<span style="color:#800000;">jmeter-loadtestweb.jmx</span>&lt;/<span style="color:#003366;"><strong>performancetest.script</strong></span>&gt;</span>
+<span style="color:#333333;">&lt;/<span style="color:#003366;"><strong>properties</strong></span>&gt;</span></pre>
+<p>Например, пусть наш jmx-файл будет называться jmeter-loadtestweb.jmx</p>
+<pre>...
+<span style="color:#333333;">&lt;<span style="color:#003366;"><strong>jMeterTestFile</strong></span>&gt;<span style="color:#008000;">${performancetest.script}</span>&lt;/<span style="color:#003366;"><strong>jMeterTestFile</strong></span>&gt;</span>
+...
+<span style="color:#333333;">&lt;<span style="color:#003366;"><strong>guiTestFile</strong></span>&gt;<span style="color:#008000;">${project.basedir}</span>/src/test/jmeter/<span style="color:#008000;">${performancetest.script}</span>&lt;/<span style="color:#003366;"><strong>guiTestFile</strong></span>&gt;</span>
+...</pre>
+<p>Это свойство можно использовать, чтобы указать путь к jmx-файлу для запуска теста в консольном и графическом режимах. Без дублирования информации.</p>
+<p>Кроме того, любые параметры проекта, даже не переопределённые в pom.xml, можно использовать при формировании новых значений.</p>
+<h1>Открытие проекта в IntelliJ IDEA</h1>
+<figure data-shortcode="caption" id="attachment_1173" aria-describedby="caption-attachment-1173" style="width: 550px" class="wp-caption aligncenter"><a href="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank.png"><img data-attachment-id="1173" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/intellij-idea-apache-jmeter-project-blank-7/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg" data-orig-size="550,283" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IntelliJ.IDEA.Apache.JMeter.project.blank" data-image-description="&lt;p&gt;Минимальный проект для jmeter-maven-plugin (ещё без jmx-скрипта)&lt;/p&gt;
+" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg?w=550" class="alignnone size-full wp-image-1173" src="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg?w=736" alt="Минимальный проект для jmeter-maven-plugin (ещё без jmx-скрипта)" srcset="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg 550w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank2.jpg?w=300 300w" sizes="(max-width: 550px) 100vw, 550px"   /></a><figcaption id="caption-attachment-1173" class="wp-caption-text">Минимальный проект для jmeter-maven-plugin (ещё без jmx-скрипта)</figcaption></figure>
+<p>Изначально проект пустой. В нём ничего нет.</p>
+<p>Для того, чтобы работать с jmeter-maven-plugin 2.8.1 (актуальная версия на 16 ноября 2018 года) нужно иметь maven 3.5 или новее.</p>
+<p>Выбрать версию <strong>maven</strong> можно в настройках<strong> IntelliJ IDEA</strong></p>
+<p>Открыть главном меню пункт <span style="text-decoration:underline;"><em><strong>File</strong></em></span> / <span style="text-decoration:underline;"><em><strong>Settings&#8230;</strong></em></span></p>
+<p>В открывшемся окне &#171;Settings&#187; перейти к разделу:</p>
+<ul>
+<li>Build, Execution, Deployment
+<ul>
+<li>Build Tools
+<ul>
+<li>Maven
+<ul>
+<li>Maven home directory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure data-shortcode="caption" id="attachment_1138" aria-describedby="caption-attachment-1138" style="width: 1128px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png"><img data-attachment-id="1138" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/intellij-idea-maven-home-directory/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png" data-orig-size="1128,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IntelliJ.IDEA.Maven.home.directory" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=736" class="alignnone size-full wp-image-1138" src="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=736" alt="IntelliJ.IDEA.Maven.home.directory" srcset="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png?w=1024 1024w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-maven-home-directory.png 1128w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1138" class="wp-caption-text">Version: 3.5.2</figcaption></figure>
+<p>Убедиться, что версия <strong>maven</strong> не ниже, чем 3.5. На снимке выше версия 3.5.2.</p>
+<h2>Роль IntelliJ IDEA</h2>
+<p>Из среды разработки удобно:</p>
+<ul>
+<li>редактировать pom.xml</li>
+<li>вызывать любые плагины maven</li>
+<li>работать с системой контроля версий</li>
+</ul>
+<p>А если в будущем будут использоваться</p>
+<ul>
+<li><a href="http://jmeter.apache.org/usermanual/component_reference.html#Java_Request" target="_blank" rel="noopener">Java Request</a></li>
+<li><a href="http://jmeter.apache.org/usermanual/component_reference.html#JUnit_Request" target="_blank" rel="noopener">jUnit Request</a></li>
+</ul>
+<p>то среда разработки будет просто необходима.</p>
+<h1>Создание пустого скрипта Apache.JMeter</h1>
+<p>Выполнить jmeter:gui используя IntelliJ Idea или вызвав в консоли:</p>
+<pre><span style="color:#333333;">mvn jmeter:gui</span></pre>
+<figure data-shortcode="caption" id="attachment_1139" aria-describedby="caption-attachment-1139" style="width: 1539px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png"><img data-attachment-id="1139" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/apache-jmeter-file-not-found/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png" data-orig-size="1539,868" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Apache.JMeter.File.not.found" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=736" class="alignnone size-full wp-image-1139" src="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=736" alt="Apache.JMeter.File.not.found" srcset="https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/apache-jmeter-file-not-found.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1139" class="wp-caption-text">loadtestweb.jmx (Нет такого файла или каталога)</figcaption></figure>
+<p>Запустится <strong>Apache.JMeter</strong> в графическом режиме и скажет, что файла jmeter-loadtestweb.jmx не существует.</p>
+<p>Самое время создать этот файл и сохранить его в каталоге <img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> /src/test/jmeter/ под именем <img data-attachment-id="1136" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/xml/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png" data-orig-size="16,16" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="xml" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" class="alignnone size-full wp-image-1136" src="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=736" alt="xml"   /> jmeter-loadtestweb.jmx, используя Apache.JMeter: <span style="text-decoration:underline;"><em><strong>File</strong></em></span> / <span style="text-decoration:underline;"><em><strong>Save</strong></em></span></p>
+<figure data-shortcode="caption" id="attachment_1140" aria-describedby="caption-attachment-1140" style="width: 1920px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png"><img data-attachment-id="1140" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/intellij-idea-apache-jmeter-project-blank-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png" data-orig-size="1920,988" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IntelliJ.IDEA.Apache.JMeter.project.blank.2" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=736" class="alignnone size-full wp-image-1140" src="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=736" alt="IntelliJ.IDEA.Apache.JMeter.project.blank.2" srcset="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-2.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1140" class="wp-caption-text">В каталоге jmeter появился jmeter-loadtestweb.jmx (слева), который удобно открыть кликнув по jmeter:gui (справа)</figcaption></figure>
+<p>Теперь в проекте есть пустой jmx-скрипт.</p>
+<h1>Создание проекта в системе контроля версий</h1>
+<p>Уже привык к использованию github.com и bitbucket.com. Но многие товарищи перешли на gitlab.com, в частности, после продажи github.</p>
+<p>В данном примере будем использовать github.com, чтобы делиться проектом с другими.</p>
+<figure data-shortcode="caption" id="attachment_1141" aria-describedby="caption-attachment-1141" style="width: 1920px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png"><img data-attachment-id="1141" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/create-a-new-repository/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png" data-orig-size="1920,988" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Create a new repository" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=736" class="alignnone size-full wp-image-1141" src="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=736" alt="Create a new repository" srcset="https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/create-a-new-repository.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1141" class="wp-caption-text">Создание проекта на github.com</figcaption></figure>
+<p>Создаём новый проект. Вот он:</p>
+<ul>
+<li><a href="https://github.com/polarnik/jmeter-loadtestweb" rel="nofollow">https://github.com/polarnik/jmeter-loadtestweb</a></li>
+<li><a href="https://github.com/polarnik/jmeter-loadtestweb.git" rel="nofollow">https://github.com/polarnik/jmeter-loadtestweb.git</a></li>
+<li>git@github.com:polarnik/jmeter-loadtestweb.git</li>
+</ul>
+<h2>Связывание репозитория и проекта в графическом режиме</h2>
+<p>В IntelliJ IDEA инициализируем git-репозиторий:</p>
+<p><span style="text-decoration:underline;"><em><strong>VCS</strong></em></span> / <em><span style="text-decoration:underline;"><strong>Enable Version Control Integration&#8230;</strong></span></em></p>
+<p><img data-attachment-id="1142" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/vcs-git/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png" data-orig-size="620,152" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="vcs.git" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png?w=620" class="alignnone size-full wp-image-1142" src="https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png?w=736" alt="vcs.git" srcset="https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png 620w, https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/vcs-git.png?w=300 300w" sizes="(max-width: 620px) 100vw, 620px"   /></p>
+<p>Добавить связь с внешним репозиторием:</p>
+<p><em><span style="text-decoration:underline;"><strong>VCS</strong></span></em> / <em><span style="text-decoration:underline;"><strong>Git</strong></span></em> / <em><span style="text-decoration:underline;"><strong>Remotes&#8230;</strong></span></em></p>
+<p>&nbsp;</p>
+<p><img data-attachment-id="1144" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/git-remote-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png" data-orig-size="556,364" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="git.remote" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png?w=556" class=" size-full wp-image-1144 aligncenter" src="https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png?w=736" alt="git.remote" srcset="https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png 556w, https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/git-remote1.png?w=300 300w" sizes="(max-width: 556px) 100vw, 556px"   /></p>
+<p>Для аутентификации по логину и паролю нужно указать https- сылку, а для аутентификации по ключу &#8212; git-ссылку на репозиторий.</p>
+<p>Загрузить содержимое внешнего репозитория в локальный, используя IntelliJ Idea (<em><span style="text-decoration:underline;"><strong>VSC</strong></span></em> / <em><span style="text-decoration:underline;"><strong>Git</strong></span></em>) или консольные команды:</p>
+<pre><span style="color:#333333;">git fetch</span>
+<span style="color:#333333;">git pull</span></pre>
+<p>Теперь в проекте появятся файлы из внешнего репозитория &#8212; README.md и LICENCE.</p>
+<figure data-shortcode="caption" id="attachment_1145" aria-describedby="caption-attachment-1145" style="width: 1920px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png"><img data-attachment-id="1145" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/intellij-idea-apache-jmeter-project-blank-3/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png" data-orig-size="1920,988" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IntelliJ.IDEA.Apache.JMeter.project.blank.3" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=736" class="alignnone size-full wp-image-1145" src="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=736" alt="IntelliJ.IDEA.Apache.JMeter.project.blank.3" srcset="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-3.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1145" class="wp-caption-text">В локальном проекте появились README.md и LICENCE из внешнего репозитория</figcaption></figure>
+<p>Добавим в <img data-attachment-id="1136" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/xml/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png" data-orig-size="16,16" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="xml" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=16" class="alignnone size-full wp-image-1136" src="https://loadtestweb.files.wordpress.com/2018/11/xml.png?w=736" alt="xml"   /> pom.xml информацию:</p>
+<ul>
+<li>о лицензии</li>
+<li>об интеграции с системой контроля версии</li>
+<li>описание автора</li>
+</ul>
+<pre><span style="color:#333333;">&lt;<strong>licenses</strong>&gt;</span>
+<span style="color:#333333;">    &lt;<strong>license</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>name</strong>&gt;The Apache Software License, Version 2.0&lt;/<strong>name</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>url</strong>&gt;http://www.apache.org/licenses/LICENSE-2.0.txt&lt;/<strong>url</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>distribution</strong>&gt;repo&lt;/<strong>distribution</strong>&gt;</span>
+<span style="color:#333333;">    &lt;/<strong>license</strong>&gt;</span>
+<span style="color:#333333;">&lt;/<strong>licenses</strong>&gt;</span>
+
+<span style="color:#333333;">&lt;<strong>scm</strong>&gt;</span>
+<span style="color:#333333;">    &lt;<strong>url</strong>&gt;https://github.com/polarnik/jmeter-loadtestweb&lt;/<strong>url</strong>&gt;</span>
+<span style="color:#333333;">    &lt;<strong>connection</strong>&gt;https://github.com/polarnik/jmeter-loadtestweb.git&lt;/<strong>connection</strong>&gt;</span>
+<span style="color:#333333;">    &lt;<strong>developerConnection</strong>&gt;git@github.com:polarnik/jmeter-loadtestweb.git&lt;/<strong>developerConnection</strong>&gt;</span>
+<span style="color:#333333;">&lt;/<strong>scm</strong>&gt;</span>
+
+<span style="color:#333333;">&lt;<strong>developers</strong>&gt;</span>
+<span style="color:#333333;">    &lt;<strong>developer</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>id</strong>&gt;polarnik&lt;/<strong>id</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>name</strong>&gt;SMIRNOV Vyacheslav&lt;/<strong>name</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>email</strong>&gt;owasp@yandex.ru&lt;/<strong>email</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>url</strong>&gt;https://github.com/polarnik&lt;/<strong>url</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>organization</strong>&gt;Raiffeisen&lt;/<strong>organization</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>organizationUrl</strong>&gt;https://www.raiffeisen.ru/&lt;/<strong>organizationUrl</strong>&gt;</span>
+<span style="color:#333333;">        &lt;<strong>roles</strong>&gt;</span>
+<span style="color:#333333;">            &lt;<strong>role</strong>&gt;Expert tester&lt;/<strong>role</strong>&gt;</span>
+<span style="color:#333333;">        &lt;/<strong>roles</strong>&gt;</span>
+<span style="color:#333333;">    &lt;/<strong>developer</strong>&gt;</span>
+<span style="color:#333333;">&lt;/<strong>developers</strong>&gt;</span></pre>
+<figure data-shortcode="caption" id="attachment_1146" aria-describedby="caption-attachment-1146" style="width: 1920px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png"><img data-attachment-id="1146" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/intellij-idea-apache-jmeter-project-blank-4/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png" data-orig-size="1920,988" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IntelliJ.IDEA.Apache.JMeter.project.blank.4" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=736" class="alignnone size-full wp-image-1146" src="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=736" alt="IntelliJ.IDEA.Apache.JMeter.project.blank.4" srcset="https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/intellij-idea-apache-jmeter-project-blank-4.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1146" class="wp-caption-text">Добавим в pom.xml описание репозитория и разработчика</figcaption></figure>
+<p>Теперь можно сохранить текущие изменения в git и отправить их во внешний репозиторий.</p>
+<p>Предполагается, что первоначальная настройка git уже была выполнена.</p>
+<p>Настроены имя пользователя и адрес электронной почты.</p>
+<ul>
+<li><a href="https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git" target="_blank" rel="noopener">https://git-scm.com/book/ru/v2/Введение-Первоначальная-настройка-Git</a></li>
+<li><a href="https://help.github.com/articles/setting-your-username-in-git/" target="_blank" rel="noopener">https://help.github.com/articles/setting-your-username-in-git/</a></li>
+<li><a href="https://help.github.com/articles/setting-your-commit-email-address-in-git/" target="_blank" rel="noopener">https://help.github.com/articles/setting-your-commit-email-address-in-git/</a></li>
+</ul>
+<p>Удобно если имя и адрес электронной почты совпадают для всех проектов. Тогда можно действовать, как указано в инструкциях выше.</p>
+<p>Текущие настройки можно посмотреть, выполнив команды</p>
+<pre><span class="command" style="color:#333333;">git config user.name</span>
+<span class="command" style="color:#333333;">git config user.email</span></pre>
+<figure data-shortcode="caption" id="attachment_1147" aria-describedby="caption-attachment-1147" style="width: 1920px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/git-config.png"><img data-attachment-id="1147" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/git-config/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/git-config.png" data-orig-size="1920,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="git.config" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=736" class="alignnone size-full wp-image-1147" src="https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=736" alt="git.config" srcset="https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=1472 1472w, https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/git-config.png?w=1024 1024w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1147" class="wp-caption-text">Просмотр текущих user.name и user.email из консоли IntelliJ IDEA</figcaption></figure>
+<p>Если же для github.com, конкретно, используется специфичное имя и адрес электронной почты, то нужно указать специфичные настройки для текущего проекта.</p>
+<p>Будет как в инструкциях выше, но без ключа &#8212;global.</p>
+<pre class="command-line"><span class="command" style="color:#333333;">git config user.name "<span style="color:#800000;"><em>polarnik</em></span>"
+git config user.email <span style="color:#800000;"><em>owasp@yandex.ru</em></span></span></pre>
+<p>Теперь можно загитовать все изменения. И отправить их во внешнее хранилище.</p>
+<figure data-shortcode="caption" id="attachment_1148" aria-describedby="caption-attachment-1148" style="width: 924px" class="wp-caption alignnone"><a href="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png"><img data-attachment-id="1148" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/git-commit/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png" data-orig-size="924,746" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="git.commit" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=300" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=736" class="alignnone size-full wp-image-1148" src="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=736" alt="git.commit" srcset="https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=736 736w, https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=150 150w, https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=300 300w, https://loadtestweb.files.wordpress.com/2018/11/git-commit.png?w=768 768w, https://loadtestweb.files.wordpress.com/2018/11/git-commit.png 924w" sizes="(max-width: 736px) 100vw, 736px"   /></a><figcaption id="caption-attachment-1148" class="wp-caption-text">git commit с выбором изменений и указанием commit message из IntelliJ IDEA</figcaption></figure>
+<h1>Настройка плагинов</h1>
+<p>Допустим нам недостаточно базовых возможностей <strong>Apache.JMeter</strong> и решено использовать плагины.</p>
+<p>Например плагин <strong>Ultimate Thread Group</strong>:</p>
+<ul>
+<li><a href="https://jmeter-plugins.org/?search=jpgc-casutg" target="_blank" rel="noopener">https://jmeter-plugins.org/?search=jpgc-casutg</a></li>
+<li><a href="https://jmeter-plugins.org/wiki/UltimateThreadGroup/" target="_blank" rel="noopener">https://jmeter-plugins.org/wiki/UltimateThreadGroup/</a></li>
+</ul>
+<p>А конкретно версии 2.6.</p>
+<p>В карточке Custom Thread Group сказано, что скачать плагины из этой группы можно используя артифакт</p>
+<pre><span style="color:#333333;">Maven Artifact: kg.apc:jmeter-plugins-casutg:2.6</span></pre>
+<p>Кроме того, скачав архив</p>
+<ul>
+<li><a href="https://jmeter-plugins.org/files/packages/jpgc-casutg-2.6.zip" target="_blank" rel="noopener">https://jmeter-plugins.org/files/packages/jpgc-casutg-2.6.zip</a></li>
+</ul>
+<p>можно увидеть следующую структуру:</p>
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> lib
+<ul>
+<li><img data-attachment-id="1135" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/folder-2/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png" data-orig-size="16,15" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="folder" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=16" class="alignnone size-full wp-image-1135" src="https://loadtestweb.files.wordpress.com/2018/11/folder1.png?w=736" alt="folder"   /> ext
+<ul>
+<li><img data-attachment-id="1149" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/jar/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png" data-orig-size="16,14" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="jar" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" class="alignnone size-full wp-image-1149" src="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=736" alt="jar"   /> jmeter-plugins-casutg-2.6.jar (<span style="color:#800000;"><strong>плагин</strong></span>)</li>
+<li><img data-attachment-id="1149" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/jar/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png" data-orig-size="16,14" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="jar" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" class="alignnone size-full wp-image-1149" src="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=736" alt="jar"   /> jmeter-plugins-manager-1.3.jar (<span style="color:#999999;">лишняя нагрузка</span>)</li>
+</ul>
+</li>
+<li><img data-attachment-id="1149" data-permalink="https://loadtestweb.info/2018/11/16/jmeter-maven-plugin/jar/" data-orig-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png" data-orig-size="16,14" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="jar" data-image-description="" data-medium-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" data-large-file="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=16" class="alignnone size-full wp-image-1149" src="https://loadtestweb.files.wordpress.com/2018/11/jar.png?w=736" alt="jar"   /> jmeter-plugin-cmn-jmeter-0.4.jar (<span style="color:#800000;"><strong>зависимость</strong></span>)</li>
+</ul>
+</li>
+</ul>
+<p>Таким образом, плагин jmeter-plugins-casutg-2.6.jar зависит от библиотеки jmeter-plugin-cmn-jmeter-0.4.jar, что важно для нас. И распространяется вместе с другим плагином jmeter-plugins-manager-1.3.jar, что не важно для нас.</p>
+<p>В jar-файле с библиотекой написано как её найти в репозитории:</p>
+<p>/META-INF/maven/kg.apc/jmeter-plugins-cmn-jmeter/pom.properties</p>
+<pre><span style="color:#333333;">#Generated by Maven</span>
+<span style="color:#333333;">#Tue May 02 15:16:47 MSK 2017</span>
+<span style="color:#333333;">version=0.4</span>
+<span style="color:#333333;">groupId=kg.apc</span>
+<span style="color:#333333;">artifactId=jmeter-plugins-cmn-jmeter</span></pre>
+<p>Поищем jmeter-plugin-cmn-jmeter-0.4.jar и найдём:</p>
+<ul>
+<li><a href="https://repo.maven.apache.org/maven2/kg/apc/jmeter-plugins-cmn-jmeter/" target="_blank" rel="noopener">https://repo.maven.apache.org/maven2/kg/apc/jmeter-plugins-cmn-jmeter/</a>
+<ul>
+<li>0.1</li>
+<li>0.2</li>
+<li>0.3</li>
+<li>0.4</li>
+<li>0.5</li>
+<li>0.6</li>
+</ul>
+</li>
+</ul>
+<p>Значит kg.apc:jmeter-plugins-casutg:2.6 зависит от kg.apc:jmeter-plugins-cmn-jmeterg:0.4. Но в тоже время, в репозитории есть более новая версия библиотеки kg.apc:jmeter-plugins-cmn-jmeter:0.6.</p>
+<pre><span style="color:#333333;">Maven Artifact: kg.apc:jmeter-plugins-cmn-jmeter:0.6</span></pre>
+<p>Добавим в раздел конфигурации плагина jmeter-maven-plugin следующие секции:</p>
+<pre><span style="color:#333333;">     &lt;<strong>jmeterExtensions</strong>&gt;</span>
+<span style="color:#999999;">         &lt;!-- Custom Thread Groups</span>
+<span style="color:#999999;">         https://jmeter-plugins.org/?search=jpgc-casutg</span>
+<span style="color:#999999;">http://repo.maven.apache.org/maven2/kg/apc/jmeter-plugins-casutg/</span>
+<span style="color:#999999;">--&gt;</span>
+<span style="color:#333333;">         &lt;<strong>artifact</strong>&gt;kg.apc:jmeter-plugins-casutg:2.6&lt;/<strong>artifact</strong>&gt;</span>
+<span style="color:#333333;">     &lt;/<strong>jmeterExtensions</strong>&gt;</span>
+
+<span style="color:#333333;">     &lt;<strong>testPlanLibraries</strong>&gt;</span>
+<span style="color:#999999;">         &lt;!-- JMeter Plugins Common Classes: Various utility classes to ease development of plugins</span>
+<span style="color:#999999;">http://repo.maven.apache.org/maven2/kg/apc/jmeter-plugins-cmn-jmeter/</span>
+<span style="color:#999999;">--&gt;</span>
+<span style="color:#333333;">         &lt;<strong>artifact</strong>&gt;kg.apc:jmeter-plugins-cmn-jmeter:0.6&lt;/<strong>artifact</strong>&gt;</span>
+<span style="color:#333333;">     &lt;/<strong>testPlanLibraries</strong>&gt;</span>
+
+<span style="color:#333333;">     &lt;<strong>downloadExtensionDependencies</strong>&gt;false&lt;/<strong>downloadExtensionDependencies</strong>&gt;</span>
+<span style="color:#333333;">     &lt;<strong>downloadLibraryDependencies</strong>&gt;false&lt;/<strong>downloadLibraryDependencies</strong>&gt;</span>
+<span style="color:#333333;">     &lt;<strong>downloadOptionalDependencies</strong>&gt;false&lt;/<strong>downloadOptionalDependencies</strong>&gt;</span>
+<span style="color:#333333;">     &lt;<strong>downloadJMeterDependencies</strong>&gt;false&lt;/<strong>downloadJMeterDependencies</strong>&gt;</span></pre>
+<p>То есть:</p>
+<ol>
+<li>В секции <strong>jmeterExtensions</strong> добавлен плагин</li>
+<li>В секции <strong>testPlanLibraries</strong> добавлены зависимости плагина</li>
+<li>Указано, что все неявно заанные зависимости не нужно скачивать:
+<ul>
+<li><strong>downloadExtensionDependencies = false<br />
+</strong></li>
+<li><strong>downloadLibraryDependencies = false</strong></li>
+<li><strong>downloadOptionalDependencies = false</strong></li>
+<li><strong>downloadJMeterDependencies = false</strong></li>
+</ul>
+</li>
+</ol>
+<p>после чего скачаем плагины (mvn jmeter:confure).</p>
+<p>Зафиксируем изменения в системе контроля версий.</p>
+<p>Изменения в проекте отражены в правке:</p>
+<ul>
+<li><a href="https://github.com/polarnik/jmeter-loadtestweb/commit/ca53a2995ad8a1c2d3ea23b18ec28d6e7803afbb" target="_blank" rel="noopener">https://github.com/polarnik/jmeter-loadtestweb/commit/ca53a2995ad8a1c2d3ea23b18ec28d6e7803afbb</a> (Added jmeter-plugin UltimateThreadGroup)</li>
+</ul>
+<p>Таким образом можно добавить любые плагины в проект Apache.JMeter.</p>
+<p>Их не придётся хранить вместе с проектом. Они всегда будут скачиваться при необходимости запуска. А в системе контроля версий будет храниться только указание скачать их в файле pom.xml.</p>
+<p>&nbsp;</p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">
