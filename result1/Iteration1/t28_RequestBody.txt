@@ -1,0 +1,2 @@
+"{"text":"Some text 3","header":"�\x98з Шкафа течет вода","ticketStateId": 0,"se"
+"rviceId": "2982","files": [4680],"shopId": "1"}"

@@ -1,4 +1,4 @@
-Virtual User Script started at: 26.11.2019 14:47:09
+Virtual User Script started at: 26.11.2019 18:10:56
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.60.0 for Windows 10; build 971 (��� 09 2018 11:27:13)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -44,6 +44,7 @@ Action.c(9): Found resource "http://learning2.pflb.ru:56902/js/core/polyphills.j
 Action.c(9): Found resource "http://learning2.pflb.ru:56902/js/core/helpers.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
 Action.c(9): Found resource "http://learning2.pflb.ru:56902/js/index.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
 Action.c(9): Found resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Action.c(9): Notify: Transaction "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" will be skipped - could not calculate the transaction time (duration=0.0059, think_time=0.0000, wasted_time=0.0104).
 Action.c(9): web_url("learning2.pflb.ru:56902") was successful, 1210039 body bytes, 6816 header bytes  	[MsgId: MMSG-26386]
 Action.c(27): web_add_cookie started  	[MsgId: MMSG-26355]
 Action.c(27): web_add_cookie was successful  	[MsgId: MMSG-26392]
@@ -60,7 +61,7 @@ Action.c(29): Found resource "http://learning2.pflb.ru:56902/js/page/authorisati
 Action.c(29): Downloading resource "http://learning2.pflb.ru:56902/tpl/login/login.dust" (specified by argument number 10)  	[MsgId: MMSG-26577]
 Action.c(29): Downloading resource "http://learning2.pflb.ru:56902/images/logo_2.png" (specified by argument number 12)  	[MsgId: MMSG-26577]
 Action.c(29): Downloading resource "https://c.urs.microsoft.com/l1.dat?cw=637099391076908467&v=3&cv=9.11.17763.0&os=10.0.17763.0.0&pg=4A72F430-B40C-4D36-A068-CE33ADA5ADF9" (specified by argument number 14)  	[MsgId: MMSG-26577]
-Action.c(29): web_url("login") was successful, 793498 body bytes, 1557 header bytes  	[MsgId: MMSG-26386]
+Action.c(29): web_url("login") was successful, 793482 body bytes, 1557 header bytes  	[MsgId: MMSG-26386]
 Action.c(43): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(43): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
 Action.c(45): web_add_header("UA-CPU") started  	[MsgId: MMSG-26355]
@@ -139,14 +140,14 @@ Action.c(135): web_url("4") started  	[MsgId: MMSG-26355]
 Action.c(135): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
 Action.c(135): web_url("4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(144): web_url("countByState") started  	[MsgId: MMSG-26355]
-Action.c(144): web_url("countByState") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(144): web_url("countByState") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(154): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
-Action.c(154): web_custom_request("ticket") was successful, 13633 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(166): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 1.8795 Wasted Time: 0.1875).
+Action.c(154): web_custom_request("ticket") was successful, 13034 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(166): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 2.3660 Wasted Time: 0.1822).
 Action.c(168): Notify: Transaction "UC01_TR02_Create_incident" started.
 Action.c(170): web_url("children") started  	[MsgId: MMSG-26355]
 Action.c(170): web_url("children") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(180): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0929 Wasted Time: 0.0260).
+Action.c(180): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0929 Wasted Time: 0.0262).
 Action.c(184): Notify: Transaction "UC01_TR03_Incident_data" started.
 Action.c(186): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(186): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
@@ -160,8 +161,8 @@ Action.c(194): Notify: Saving Parameter "shopIDs_6 = 2".
 Action.c(194): Notify: Saving Parameter "shopIDs_count = 6".
 Action.c(194): web_url("shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(204): Notify: Parameter Substitution: parameter "shopIDs_count" =  "6"
-Action.c(206): Notify: Parameter Substitution: parameter "shopIDs_3" =  "4"
-Action.c(206): Notify: Saving Parameter "shopID = 4".
+Action.c(206): Notify: Parameter Substitution: parameter "shopIDs_5" =  "1"
+Action.c(206): Notify: Saving Parameter "shopID = 1".
 Action.c(208): web_url("shops_2") started  	[MsgId: MMSG-26355]
 Action.c(208): web_url("shops_2") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(217): web_reg_save_param started  	[MsgId: MMSG-26355]
@@ -180,7 +181,7 @@ Action.c(234): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(242): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(242): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(250): web_url("treeview") started  	[MsgId: MMSG-26355]
-Action.c(250): Notify: Parameter Substitution: parameter "shopID" =  "4"
+Action.c(250): Notify: Parameter Substitution: parameter "shopID" =  "1"
 Action.c(250): Notify: Saving Parameter "serviceIdS_1 = 2782".
 Action.c(250): Notify: Saving Parameter "serviceIdS_2 = 2785".
 Action.c(250): Notify: Saving Parameter "serviceIdS_3 = 2786".
@@ -645,8 +646,8 @@ Action.c(250): Notify: Saving Parameter "serviceIdS_count = 230".
 Action.c(250): Notify: Saving Parameter "serviceNames_count = 230".
 Action.c(250): web_url("treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(260): Notify: Parameter Substitution: parameter "serviceIdS_count" =  "230"
-Action.c(262): Notify: Parameter Substitution: parameter "serviceIdS_98" =  "2935"
-Action.c(262): Notify: Saving Parameter "serviceId = 2935".
+Action.c(262): Notify: Parameter Substitution: parameter "serviceIdS_145" =  "2982"
+Action.c(262): Notify: Saving Parameter "serviceId = 2982".
 Action.c(264): web_url("children_3") started  	[MsgId: MMSG-26355]
 Action.c(264): web_url("children_3") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(274): web_url("service") started  	[MsgId: MMSG-26355]
@@ -656,108 +657,112 @@ Action.c(284): web_url("146") was successful, 214 body bytes, 316 header bytes, 
 Action.c(294): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(294): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(303): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
-Action.c(303): Notify: Parameter Substitution: parameter "serviceId" =  "2935"
-Action.c(303): Notify: Parameter Substitution: parameter "shopID" =  "4"
+Action.c(303): Notify: Parameter Substitution: parameter "serviceId" =  "2982"
+Action.c(303): Notify: Parameter Substitution: parameter "shopID" =  "1"
 Action.c(303): Warning -35060: No matches were found for the specified query: "$..services..name"  	[MsgId: MWAR-35060]
 Action.c(303): Notify: Saving Parameter "inventoryNumbers_count = 0".
-Action.c(303): web_url("inventoryNumbers") highest severity level was "warning", 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
+Action.c(303): web_url("inventoryNumbers") highest severity level was "warning", 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
 Action.c(316): web_url("inventoryNumbers_2") started  	[MsgId: MMSG-26355]
-Action.c(316): Notify: Parameter Substitution: parameter "shopID" =  "4"
-Action.c(316): Notify: Parameter Substitution: parameter "serviceId" =  "2935"
-Action.c(316): web_url("inventoryNumbers_2") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(328): web_submit_data("file") started  	[MsgId: MMSG-26355]
-Action.c(328): Notify: Parameter Substitution: parameter "File" =  "File1.txt"
-Action.c(328): web_submit_data("file") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(343): Notify: Saving Parameter "c_buffer = ".
-Action.c(345): Notify: Parameter Substitution: parameter "inventoryNumbers_count" =  "0"
-Action.c(347): Notify: Parameter Substitution: parameter "c_buffer" =  ""
-Action.c(347): Notify: Parameter Substitution: parameter "Text" =  "Some text 4"
-Action.c(347): Notify: Parameter Substitution: parameter "serviceNames_98" =  "Вентиляция не греет"
-Action.c(347): Notify: Parameter Substitution: parameter "serviceId" =  "2935"
-Action.c(347): Notify: Parameter Substitution: parameter "shopID" =  "4"
-Action.c(347): Notify: Saving Parameter "c_buffer = {"text":"Some text 4","header":"Вентиляция не греет","ticketStateId": 0,"serviceId": "2935","files": [4383],"shopId": "4"}".
+Action.c(316): Notify: Parameter Substitution: parameter "shopID" =  "1"
+Action.c(316): Notify: Parameter Substitution: parameter "serviceId" =  "2982"
+Action.c(316): web_url("inventoryNumbers_2") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(328): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(328): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(335): web_submit_data("file") started  	[MsgId: MMSG-26355]
+Action.c(335): Notify: Parameter Substitution: parameter "File" =  "File1.txt"
+Action.c(335): Notify: Saving Parameter "FileID = 4680".
+Action.c(335): web_submit_data("file") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(350): Notify: Saving Parameter "c_buffer = ".
+Action.c(352): Notify: Parameter Substitution: parameter "inventoryNumbers_count" =  "0"
+Action.c(354): Notify: Parameter Substitution: parameter "c_buffer" =  ""
+Action.c(354): Notify: Parameter Substitution: parameter "Text" =  "Some text 3"
+Action.c(354): Notify: Parameter Substitution: parameter "serviceNames_145" =  "�\x98з Шкафа течет вода"
+Action.c(354): Notify: Parameter Substitution: parameter "serviceId" =  "2982"
+Action.c(354): Notify: Parameter Substitution: parameter "FileID" =  "4680"
+Action.c(354): Notify: Parameter Substitution: parameter "shopID" =  "1"
+Action.c(354): Notify: Saving Parameter "c_buffer = {"text":"Some text 3","header":"�\x98з Шкафа течет вода","ticketStateId": 0,"serviceId": "2982","files": [4680],"shopId": "1"}".
 c_buffer
-Action.c(371): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(371): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(382): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
-Action.c(382): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 4","header":"Вентиляция не греет","ticketStateId": 0,"serviceId": "2935","files": [4383],"shopId": "4"}"
-Action.c(382): Notify: Saving Parameter "ID = 149380".
-Action.c(382): web_custom_request("ticket_2") was successful, 1037 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(396): Notify: Parameter Substitution: parameter "ID" =  "149380"
-Action.c(399): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(399): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
-Action.c(399): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(403): web_url("learning2.pflb.ru:56902_3") started  	[MsgId: MMSG-26355]
-Action.c(403): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(403): Downloading resource "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1574679445084" (specified by argument number 9)  	[MsgId: MMSG-26577]
-Action.c(403): Downloading resource "http://learning2.pflb.ru:56902/engineer/wrapper/wrapper.dust" (specified by argument number 11)  	[MsgId: MMSG-26577]
-Action.c(403): Downloading resource "http://learning2.pflb.ru:56902/engineer/wrapper/wrapper.js" (specified by argument number 13)  	[MsgId: MMSG-26577]
-Action.c(403): Downloading resource "http://learning2.pflb.ru:56902/engineer/tickets/tickets.dust" (specified by argument number 15)  	[MsgId: MMSG-26577]
-Action.c(403): Downloading resource "http://learning2.pflb.ru:56902/engineer/tickets/tickets.js" (specified by argument number 17)  	[MsgId: MMSG-26577]
-Action.c(403): web_url("learning2.pflb.ru:56902_3") was successful, 116719 body bytes, 1739 header bytes  	[MsgId: MMSG-26386]
-Action.c(418): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(418): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(421): web_url("checkLogin_2") started  	[MsgId: MMSG-26355]
-Action.c(421): web_url("checkLogin_2") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(431): web_url("info_2") started  	[MsgId: MMSG-26355]
-Action.c(431): web_url("info_2") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(441): web_url("4_2") started  	[MsgId: MMSG-26355]
-Action.c(441): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
-Action.c(441): web_url("4_2") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(450): web_url("countByState_2") started  	[MsgId: MMSG-26355]
-Action.c(450): web_url("countByState_2") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(460): web_url("countByState_3") started  	[MsgId: MMSG-26355]
-Action.c(460): web_url("countByState_3") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(470): web_custom_request("ticket_3") started  	[MsgId: MMSG-26355]
-Action.c(470): web_custom_request("ticket_3") was successful, 13206 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(482): web_custom_request("ticket_4") started  	[MsgId: MMSG-26355]
-Action.c(482): web_custom_request("ticket_4") was successful, 13206 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(494): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 9.9114 Wasted Time: 0.4916).
-Action.c(498): Notify: Transaction "UC01_TR04_Logout" started.
-Action.c(500): web_url("logout") started  	[MsgId: MMSG-26355]
-Action.c(500): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
-Action.c(509): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(509): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
-Action.c(509): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(511): web_url("login_3") started  	[MsgId: MMSG-26355]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(511): web_url("login_3") was successful, 873 body bytes, 392 header bytes  	[MsgId: MMSG-26386]
-Action.c(521): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.1109 Wasted Time: 0.0464).
+Action.c(380): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(380): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(391): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
+Action.c(391): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 3","header":"�\x98з Шкафа течет вода","ticketStateId": 0,"serviceId": "2982","files": [4680],"shopId": "1"}"
+Action.c(391): Notify: Saving Parameter "ID = 149386".
+Action.c(391): web_custom_request("ticket_2") was successful, 1480 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(405): Notify: Parameter Substitution: parameter "ID" =  "149386"
+Action.c(408): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(408): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
+Action.c(408): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(412): web_url("learning2.pflb.ru:56902_3") started  	[MsgId: MMSG-26355]
+Action.c(412): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(412): Downloading resource "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1574679445084" (specified by argument number 9)  	[MsgId: MMSG-26577]
+Action.c(412): Downloading resource "http://learning2.pflb.ru:56902/engineer/wrapper/wrapper.dust" (specified by argument number 11)  	[MsgId: MMSG-26577]
+Action.c(412): Downloading resource "http://learning2.pflb.ru:56902/engineer/wrapper/wrapper.js" (specified by argument number 13)  	[MsgId: MMSG-26577]
+Action.c(412): Downloading resource "http://learning2.pflb.ru:56902/engineer/tickets/tickets.dust" (specified by argument number 15)  	[MsgId: MMSG-26577]
+Action.c(412): Downloading resource "http://learning2.pflb.ru:56902/engineer/tickets/tickets.js" (specified by argument number 17)  	[MsgId: MMSG-26577]
+Action.c(412): web_url("learning2.pflb.ru:56902_3") was successful, 116719 body bytes, 1739 header bytes  	[MsgId: MMSG-26386]
+Action.c(427): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(427): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(430): web_url("checkLogin_2") started  	[MsgId: MMSG-26355]
+Action.c(430): web_url("checkLogin_2") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(440): web_url("info_2") started  	[MsgId: MMSG-26355]
+Action.c(440): web_url("info_2") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(450): web_url("4_2") started  	[MsgId: MMSG-26355]
+Action.c(450): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
+Action.c(450): web_url("4_2") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(459): web_url("countByState_2") started  	[MsgId: MMSG-26355]
+Action.c(459): web_url("countByState_2") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(469): web_url("countByState_3") started  	[MsgId: MMSG-26355]
+Action.c(469): web_url("countByState_3") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(479): web_custom_request("ticket_3") started  	[MsgId: MMSG-26355]
+Action.c(479): web_custom_request("ticket_3") was successful, 13090 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(491): web_custom_request("ticket_4") started  	[MsgId: MMSG-26355]
+Action.c(491): web_custom_request("ticket_4") was successful, 13090 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(503): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 5.2113 Wasted Time: 0.5329).
+Action.c(507): Notify: Transaction "UC01_TR04_Logout" started.
+Action.c(509): web_url("logout") started  	[MsgId: MMSG-26355]
+Action.c(509): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
+Action.c(518): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(518): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
+Action.c(518): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(520): web_url("login_3") started  	[MsgId: MMSG-26355]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(520): web_url("login_3") was successful, 873 body bytes, 392 header bytes  	[MsgId: MMSG-26386]
+Action.c(530): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.1064 Wasted Time: 0.0443).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...

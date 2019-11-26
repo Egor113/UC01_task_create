@@ -2924,6 +2924,13 @@ Action()
 
 	lr_think_time(42);
 
+	web_reg_save_param_json(
+        "ParamName=FileID",
+        "QueryString=$..id",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "LAST");
+	
 	web_submit_data("file", 
 		"Action=http://learning2.pflb.ru:56902/api/ticket/file/", 
 		"Method=POST", 
@@ -2936,29 +2943,31 @@ Action()
 		"ITEMDATA", 
 		"Name=files", "Value={File}", "File=yes", "ENDITEM", 
 		"LAST");
-
+	
 	lr_think_time(8);
 
 	lr_save_string("", "c_buffer");
 	
 	if (atoi(lr_eval_string("{inventoryNumbers_count}")) == 0){
 		
-		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [4383],\"shopId\": \"%s\"}",
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [%s],\"shopId\": \"%s\"}",
 		   lr_eval_string("{c_buffer}"),
 		   lr_eval_string("{Text}"),
 		   lr_paramarr_idx("serviceNames", j),
 		   lr_eval_string("{serviceId}"),
+		   lr_eval_string("{FileID}"),
 		   lr_eval_string("{shopID}"));
 	}
 	else {
 		inventoryNumberId_index = rand() % atoi(lr_eval_string("{inventoryNumbers_count}")) + 1;
 		lr_save_string(lr_paramarr_idx("inventoryNumbers", inventoryNumberId_index), "inventoryNumberId");
 		
-		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [4383],\"inventoryNumberId\": \"%s\",\"shopId\": \"%s\"}",
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [%s],\"inventoryNumberId\": \"%s\",\"shopId\": \"%s\"}",
 		   lr_eval_string("{c_buffer}"),
 		   lr_eval_string("{Text}"),
 		   lr_paramarr_idx("serviceNames", j),
 		   lr_eval_string("{serviceId}"),
+		   lr_eval_string("{FileID}"),
 		   lr_eval_string("{inventoryNumberId}"),
 		   lr_eval_string("{shopID}"));
 	}

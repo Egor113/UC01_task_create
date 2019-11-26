@@ -1,4 +1,4 @@
-Virtual User Script started at: 26.11.2019 14:45:11
+Virtual User Script started at: 26.11.2019 17:59:19
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.60.0 for Windows 10; build 971 (��� 09 2018 11:27:13)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -60,7 +60,7 @@ Action.c(29): Found resource "http://learning2.pflb.ru:56902/js/page/authorisati
 Action.c(29): Downloading resource "http://learning2.pflb.ru:56902/tpl/login/login.dust" (specified by argument number 10)  	[MsgId: MMSG-26577]
 Action.c(29): Downloading resource "http://learning2.pflb.ru:56902/images/logo_2.png" (specified by argument number 12)  	[MsgId: MMSG-26577]
 Action.c(29): Downloading resource "https://c.urs.microsoft.com/l1.dat?cw=637099391076908467&v=3&cv=9.11.17763.0&os=10.0.17763.0.0&pg=4A72F430-B40C-4D36-A068-CE33ADA5ADF9" (specified by argument number 14)  	[MsgId: MMSG-26577]
-Action.c(29): web_url("login") was successful, 793498 body bytes, 1557 header bytes  	[MsgId: MMSG-26386]
+Action.c(29): web_url("login") was successful, 793482 body bytes, 1557 header bytes  	[MsgId: MMSG-26386]
 Action.c(43): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(43): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
 Action.c(45): web_add_header("UA-CPU") started  	[MsgId: MMSG-26355]
@@ -139,14 +139,14 @@ Action.c(135): web_url("4") started  	[MsgId: MMSG-26355]
 Action.c(135): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
 Action.c(135): web_url("4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(144): web_url("countByState") started  	[MsgId: MMSG-26355]
-Action.c(144): web_url("countByState") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(144): web_url("countByState") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(154): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
-Action.c(154): web_custom_request("ticket") was successful, 13659 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(166): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 1.8501 Wasted Time: 0.1854).
+Action.c(154): web_custom_request("ticket") was successful, 13001 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(166): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 2.1405 Wasted Time: 0.1803).
 Action.c(168): Notify: Transaction "UC01_TR02_Create_incident" started.
 Action.c(170): web_url("children") started  	[MsgId: MMSG-26355]
 Action.c(170): web_url("children") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(180): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0929 Wasted Time: 0.0233).
+Action.c(180): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0862 Wasted Time: 0.0226).
 Action.c(184): Notify: Transaction "UC01_TR03_Incident_data" started.
 Action.c(186): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(186): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
@@ -160,8 +160,8 @@ Action.c(194): Notify: Saving Parameter "shopIDs_6 = 2".
 Action.c(194): Notify: Saving Parameter "shopIDs_count = 6".
 Action.c(194): web_url("shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(204): Notify: Parameter Substitution: parameter "shopIDs_count" =  "6"
-Action.c(206): Notify: Parameter Substitution: parameter "shopIDs_5" =  "1"
-Action.c(206): Notify: Saving Parameter "shopID = 1".
+Action.c(206): Notify: Parameter Substitution: parameter "shopIDs_3" =  "4"
+Action.c(206): Notify: Saving Parameter "shopID = 4".
 Action.c(208): web_url("shops_2") started  	[MsgId: MMSG-26355]
 Action.c(208): web_url("shops_2") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(217): web_reg_save_param started  	[MsgId: MMSG-26355]
@@ -180,7 +180,7 @@ Action.c(234): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(242): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(242): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(250): web_url("treeview") started  	[MsgId: MMSG-26355]
-Action.c(250): Notify: Parameter Substitution: parameter "shopID" =  "1"
+Action.c(250): Notify: Parameter Substitution: parameter "shopID" =  "4"
 Action.c(250): Notify: Saving Parameter "serviceIdS_1 = 2782".
 Action.c(250): Notify: Saving Parameter "serviceIdS_2 = 2785".
 Action.c(250): Notify: Saving Parameter "serviceIdS_3 = 2786".
@@ -645,8 +645,8 @@ Action.c(250): Notify: Saving Parameter "serviceIdS_count = 230".
 Action.c(250): Notify: Saving Parameter "serviceNames_count = 230".
 Action.c(250): web_url("treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(260): Notify: Parameter Substitution: parameter "serviceIdS_count" =  "230"
-Action.c(262): Notify: Parameter Substitution: parameter "serviceIdS_140" =  "2977"
-Action.c(262): Notify: Saving Parameter "serviceId = 2977".
+Action.c(262): Notify: Parameter Substitution: parameter "serviceIdS_188" =  "2842"
+Action.c(262): Notify: Saving Parameter "serviceId = 2842".
 Action.c(264): web_url("children_3") started  	[MsgId: MMSG-26355]
 Action.c(264): web_url("children_3") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(274): web_url("service") started  	[MsgId: MMSG-26355]
@@ -656,15 +656,15 @@ Action.c(284): web_url("146") was successful, 214 body bytes, 316 header bytes, 
 Action.c(294): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(294): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(303): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
-Action.c(303): Notify: Parameter Substitution: parameter "serviceId" =  "2977"
-Action.c(303): Notify: Parameter Substitution: parameter "shopID" =  "1"
+Action.c(303): Notify: Parameter Substitution: parameter "serviceId" =  "2842"
+Action.c(303): Notify: Parameter Substitution: parameter "shopID" =  "4"
 Action.c(303): Warning -35060: No matches were found for the specified query: "$..services..name"  	[MsgId: MWAR-35060]
 Action.c(303): Notify: Saving Parameter "inventoryNumbers_count = 0".
-Action.c(303): web_url("inventoryNumbers") highest severity level was "warning", 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
+Action.c(303): web_url("inventoryNumbers") highest severity level was "warning", 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
 Action.c(316): web_url("inventoryNumbers_2") started  	[MsgId: MMSG-26355]
-Action.c(316): Notify: Parameter Substitution: parameter "shopID" =  "1"
-Action.c(316): Notify: Parameter Substitution: parameter "serviceId" =  "2977"
-Action.c(316): web_url("inventoryNumbers_2") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(316): Notify: Parameter Substitution: parameter "shopID" =  "4"
+Action.c(316): Notify: Parameter Substitution: parameter "serviceId" =  "2842"
+Action.c(316): web_url("inventoryNumbers_2") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(328): web_submit_data("file") started  	[MsgId: MMSG-26355]
 Action.c(328): Notify: Parameter Substitution: parameter "File" =  "File1.txt"
 Action.c(328): web_submit_data("file") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
@@ -672,18 +672,18 @@ Action.c(343): Notify: Saving Parameter "c_buffer = ".
 Action.c(345): Notify: Parameter Substitution: parameter "inventoryNumbers_count" =  "0"
 Action.c(347): Notify: Parameter Substitution: parameter "c_buffer" =  ""
 Action.c(347): Notify: Parameter Substitution: parameter "Text" =  "Some text 2"
-Action.c(347): Notify: Parameter Substitution: parameter "serviceNames_140" =  "В холодильнике разбито/сломано(указать, что именно)"
-Action.c(347): Notify: Parameter Substitution: parameter "serviceId" =  "2977"
-Action.c(347): Notify: Parameter Substitution: parameter "shopID" =  "1"
-Action.c(347): Notify: Saving Parameter "c_buffer = {"text":"Some text 2","header":"В холодильнике разбито/сломано(указать, что именно)","ticketStateId": 0,"serviceId": "2977","files": [4383],"shopId": "1"}".
+Action.c(347): Notify: Parameter Substitution: parameter "serviceNames_188" =  "Запах газа"
+Action.c(347): Notify: Parameter Substitution: parameter "serviceId" =  "2842"
+Action.c(347): Notify: Parameter Substitution: parameter "shopID" =  "4"
+Action.c(347): Notify: Saving Parameter "c_buffer = {"text":"Some text 2","header":"Запах газа","ticketStateId": 0,"serviceId": "2842","files": [4383],"shopId": "4"}".
 c_buffer
 Action.c(371): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(371): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(382): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
-Action.c(382): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 2","header":"В холодильнике разбито/сломано(указать, что именно)","ticketStateId": 0,"serviceId": "2977","files": [4383],"shopId": "1"}"
-Action.c(382): Notify: Saving Parameter "ID = 149379".
-Action.c(382): web_custom_request("ticket_2") was successful, 1482 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(396): Notify: Parameter Substitution: parameter "ID" =  "149379"
+Action.c(382): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 2","header":"Запах газа","ticketStateId": 0,"serviceId": "2842","files": [4383],"shopId": "4"}"
+Action.c(382): Notify: Saving Parameter "ID = 149385".
+Action.c(382): web_custom_request("ticket_2") was successful, 930 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(396): Notify: Parameter Substitution: parameter "ID" =  "149385"
 Action.c(399): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
 Action.c(399): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
 Action.c(399): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
@@ -732,14 +732,14 @@ Action.c(441): web_url("4_2") started  	[MsgId: MMSG-26355]
 Action.c(441): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
 Action.c(441): web_url("4_2") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(450): web_url("countByState_2") started  	[MsgId: MMSG-26355]
-Action.c(450): web_url("countByState_2") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(450): web_url("countByState_2") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(460): web_url("countByState_3") started  	[MsgId: MMSG-26355]
-Action.c(460): web_url("countByState_3") was successful, 216 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(460): web_url("countByState_3") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(470): web_custom_request("ticket_3") started  	[MsgId: MMSG-26355]
-Action.c(470): web_custom_request("ticket_3") was successful, 13633 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(470): web_custom_request("ticket_3") was successful, 12507 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(482): web_custom_request("ticket_4") started  	[MsgId: MMSG-26355]
-Action.c(482): web_custom_request("ticket_4") was successful, 13633 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(494): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 56.3694 Wasted Time: 0.4969).
+Action.c(482): web_custom_request("ticket_4") was successful, 12507 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(494): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 5.6928 Wasted Time: 0.5154).
 Action.c(498): Notify: Transaction "UC01_TR04_Logout" started.
 Action.c(500): web_url("logout") started  	[MsgId: MMSG-26355]
 Action.c(500): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
@@ -757,7 +757,7 @@ Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js
 Action.c(511): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(511): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(511): web_url("login_3") was successful, 873 body bytes, 392 header bytes  	[MsgId: MMSG-26386]
-Action.c(521): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.1164 Wasted Time: 0.0465).
+Action.c(521): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.1169 Wasted Time: 0.0530).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...
