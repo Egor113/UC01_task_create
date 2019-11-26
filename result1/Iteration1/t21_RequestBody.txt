@@ -1,5 +1,0 @@
-"-----------------------------7d025e2b16b064e\r\n"
-"Content-Disposition: form-data; name="files"\r\n"
-"\r\n"
-"file.txt\r\n"
-"-----------------------------7d025e2b16b064e--\r\n"
