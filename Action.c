@@ -17,7 +17,7 @@ Action()
   
   Название запросов формируя я сам
     
-  5) запросы не влезают в экран
+  5) запросы не влезают в экран +
   
   ????????
   
@@ -31,7 +31,7 @@ Action()
 	int shopID_index;
 	int inventoryNumberId_index;
 	long FileVarriable;
-	char FileLocation[1024] = "file_id.txt";
+	char FileLocation[1024] = "..\\file_id.txt";
 
 	web_url("/", 
 		"URL={Host}:{Port}/", 
@@ -135,7 +135,7 @@ Action()
 
 	lr_end_transaction("UC01_TR01_Login",LR_AUTO);
 	
-	lr_think_time(95);
+	lr_think_time(TNINKTIME);
 
 	lr_start_transaction("UC01_TR02_Create_incident");
 
@@ -151,7 +151,7 @@ Action()
 
 	lr_end_transaction("UC01_TR02_Create_incident",LR_AUTO);
 
-	lr_think_time(95);
+	lr_think_time(TNINKTIME);
 
 	lr_start_transaction("UC01_TR03_Incident_data");
 	
@@ -456,7 +456,7 @@ Action()
 
 	lr_end_transaction("UC01_TR03_Incident_data",LR_AUTO);
 
-	lr_think_time(15);
+	lr_think_time(TNINKTIME);
 
 	lr_start_transaction("UC01_TR04_Logout");
 

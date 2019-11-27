@@ -1,6 +1,9 @@
 #ifndef _GLOBALS_H 
 #define _GLOBALS_H
 
+//Значение thinktime будет рассчитываться исходя из pacing
+#define TNINKTIME 10
+
 //--------------------------------------------------------------------
 // Include Files
 #include "lrun.h"

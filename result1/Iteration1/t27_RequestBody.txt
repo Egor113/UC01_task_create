@@ -1,2 +1,2 @@
-"{"text":"Some text 3","header":"Отлов птиц","ticketStateId": 0,"serviceId": "2816","f"
-"iles": [4770],"shopId": "4"}"
+"{"text":"Some text 4","header":"Необходим ремонт ограждени�\xB9(две"
+"рок)","ticketStateId": 0,"serviceId": "2916","files": [4784],"shopId": "1"}"

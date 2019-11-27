@@ -1137,6 +1137,9 @@ extern VTCERR2  lrvtc_noop();
 
 
  
+
+
+ 
  
 
 # 1 "C:\\Program Files (x86)\\Micro Focus\\LoadRunner\\include/web_api.h" 1
@@ -2572,7 +2575,7 @@ void
 
 
 
-# 7 "globals.h" 2
+# 10 "globals.h" 2
 
 # 1 "lrw_custom_body.h" 1
  
@@ -2580,7 +2583,7 @@ void
 
 
 
-# 8 "globals.h" 2
+# 11 "globals.h" 2
 
 
  
@@ -2606,7 +2609,7 @@ Action()
 	int shopID_index;
 	int inventoryNumberId_index;
 	long FileVarriable;
-	char FileLocation[1024] = "file_id.txt";
+	char FileLocation[1024] = "..\\file_id.txt";
 
 	web_url("/", 
 		"URL={Host}:{Port}/", 
@@ -2710,7 +2713,7 @@ Action()
 
 	lr_end_transaction("UC01_TR01_Login",2);
 	
-	lr_think_time(95);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR02_Create_incident");
 
@@ -2726,7 +2729,7 @@ Action()
 
 	lr_end_transaction("UC01_TR02_Create_incident",2);
 
-	lr_think_time(95);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR03_Incident_data");
 	
@@ -3031,7 +3034,7 @@ Action()
 
 	lr_end_transaction("UC01_TR03_Incident_data",2);
 
-	lr_think_time(15);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR04_Logout");
 
