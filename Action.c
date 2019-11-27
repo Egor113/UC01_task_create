@@ -3,7 +3,7 @@ Action()
 	/*
   1) extraries -   акие extraries нужны дл€ работы скрипта?
   все html оставить, остальное удалить кроме тех extraries,
-  откуда берутс€ параметры
+  откуда берутс€ параметры +
   
   2) ненужные хедеры, куки, синктаймы
    акие нужные, какие ненужные 
@@ -43,9 +43,6 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	//delete
-	web_add_cookie("sessionExpired=true; DOMAIN=learning2.pflb.ru");
-
 	web_url("login", 
 		"URL=http://learning2.pflb.ru:56902/login", 
 		"TargetFrame=", 
@@ -59,10 +56,6 @@ Action()
 	web_set_sockets_option("SSL_VERSION", "TLS1.2");
 
 	//delete
-	web_add_header("UA-CPU", 
-		"AMD64");
-
-	//delete
 	web_url("iecompatviewlist.xml", 
 		"URL=https://iecvlist.microsoft.com/IE11/1478281996/iecompatviewlist.xml?cvlp=4999843580514731330", 
 		"TargetFrame=", 
@@ -74,15 +67,6 @@ Action()
 		LAST);
 
 	lr_start_transaction("UC01_TR01_Login");
-
-	//delete
-	web_add_cookie("sessionExpired=false; DOMAIN=learning2.pflb.ru");
-
-	//delete
-	web_add_header("X-Requested-With", 
-		"XMLHttpRequest");
-
-	lr_think_time(87);
 
 	web_set_user("{Login}", "{Password}", "learning2.pflb.ru:56902");
 	
@@ -99,16 +83,6 @@ Action()
 		"Name=rememberMe", "Value=false", ENDITEM, 
 		LAST);
 
-	web_add_cookie("currentCompany=0; DOMAIN=learning2.pflb.ru");
-
-	web_add_cookie("currentUser={Login}; DOMAIN=learning2.pflb.ru");
-
-	web_add_cookie("PFLB.pre.login.link=null; DOMAIN=learning2.pflb.ru");
-
-	web_add_cookie("filterSetting="
-		"%7B%22page%22%3A%22http%3A%2F%2Flearning2.pflb.ru%3A56902%2F%23tickets%3Fstate%3Dopened%26page%3D1%22%2C%22smho%22%3Anull%2C%22dateStart%22%3A%22%22%2C%22dateEnd%22%3A%22%22%2C%22cat1%22%3Anull%2C%22cat2%22%3Anull%2C%22cat3%22%3Anull%2C%22cat4%22%3Anull%2C%22theme%22%3Anull%2C%22engineer%22%3Anull%2C%22location%22%3Anull%2C%22division%22%3Anull%2C%22overdue%22%3Afalse%2C%22filters%22%3A%7B%22newCheckbox%22%3Atrue%2C%22appointedCheckbox%22%3Atrue%2C%22performedCheckbox%22%3Atrue%2C%22controlCheckbo"
-		"x%22%3Atrue%7D%7D; DOMAIN=learning2.pflb.ru");
-
 	web_url("learning2.pflb.ru:56902_2", 
 		"URL=http://learning2.pflb.ru:56902/", 
 		"TargetFrame=", 
@@ -117,9 +91,6 @@ Action()
 		"Snapshot=t5.inf", 
 		"Mode=HTML", 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
@@ -173,6 +144,8 @@ Action()
 		LAST);
 
 	lr_end_transaction("UC01_TR01_Login",LR_AUTO);
+	
+	lr_think_time(95);
 
 	lr_start_transaction("UC01_TR02_Create_incident");
 
@@ -320,9 +293,6 @@ Action()
 		"Mode=HTML", 
 		LAST);
 	
-
-	lr_think_time(5);
-
 	web_url("inventoryNumbers_2", 
 		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?shopId={shopID}&serviceId={serviceId}&serviceId=2782&q=&page=0", 
 		"TargetFrame=", 
@@ -332,8 +302,6 @@ Action()
 		"Snapshot=t20.inf", 
 		"Mode=HTML", 
 		LAST);
-
-	lr_think_time(42);
 
 	web_reg_save_param_json(
         "ParamName=FileID",
@@ -355,8 +323,6 @@ Action()
 		"Name=files", "Value={File}", "File=yes", ENDITEM, 
 		LAST);
 	
-	lr_think_time(8);
-
 	lr_save_string("", "c_buffer");
 	
 	if (atoi(lr_eval_string("{inventoryNumbers_count}")) == 0){
@@ -382,8 +348,6 @@ Action()
 		   lr_eval_string("{inventoryNumberId}"),
 		   lr_eval_string("{shopID}"));
 	}
-	
-
 	
 	lr_message("c_buffer");
 	
@@ -415,9 +379,9 @@ Action()
      fprintf (FileVarriable, "%s \n", lr_eval_string("{ID}")); 
      fclose (FileVarriable);
 	
-	web_revert_auto_header("X-Requested-With");
+	//web_revert_auto_header("X-Requested-With");
 
-	lr_think_time(7);
+	//lr_think_time(7);
 
 	web_url("learning2.pflb.ru:56902_3", 
 		"URL=http://learning2.pflb.ru:56902/", 
@@ -427,9 +391,6 @@ Action()
 		"Snapshot=t23.inf", 
 		"Mode=HTML", 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin_2", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
@@ -519,7 +480,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_revert_auto_header("X-Requested-With");
+//	web_revert_auto_header("X-Requested-With");
 
 	web_url("login_3", 
 		"URL=http://learning2.pflb.ru:56902/login", 
