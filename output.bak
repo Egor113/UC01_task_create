@@ -1,4 +1,4 @@
-Virtual User Script started at: 27.11.2019 15:39:18
+Virtual User Script started at: 27.11.2019 16:09:59
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.60.0 for Windows 10; build 971 (��� 09 2018 11:27:13)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -136,8 +136,8 @@ Action.c(123): Notify: Parameter Substitution: parameter "Host" =  "http://learn
 Action.c(123): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(123): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(123): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(123): web_custom_request("/api/ticket/") was successful, 11115 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(136): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 1.3208 Wasted Time: 0.1313).
+Action.c(123): web_custom_request("/api/ticket/") was successful, 11924 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(136): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 2.1072 Wasted Time: 0.1610).
 Action.c(140): Notify: Transaction "UC01_TR02_Create_incident" started.
 Action.c(142): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
 Action.c(142): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -145,7 +145,7 @@ Action.c(142): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(142): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(142): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(142): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(152): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0889 Wasted Time: 0.0184).
+Action.c(152): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0927 Wasted Time: 0.0208).
 Action.c(156): Notify: Transaction "UC01_TR03_Incident_data" started.
 Action.c(158): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(158): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
@@ -651,8 +651,8 @@ Action.c(216): Notify: Saving Parameter "serviceIdS_count = 230".
 Action.c(216): Notify: Saving Parameter "serviceNames_count = 230".
 Action.c(216): web_url("/api/user/catalog/treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(226): Notify: Parameter Substitution: parameter "serviceIdS_count" =  "230"
-Action.c(228): Notify: Parameter Substitution: parameter "serviceIdS_228" =  "2998"
-Action.c(228): Notify: Saving Parameter "serviceId = 2998".
+Action.c(228): Notify: Parameter Substitution: parameter "serviceIdS_82" =  "2922"
+Action.c(228): Notify: Saving Parameter "serviceId = 2922".
 Action.c(230): web_url("/api/user/catalog/node/146/children/") started  	[MsgId: MMSG-26355]
 Action.c(230): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(230): Notify: Parameter Substitution: parameter "Port" =  "56902"
@@ -676,7 +676,7 @@ Action.c(260): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(269): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
 Action.c(269): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(269): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(269): Notify: Parameter Substitution: parameter "serviceId" =  "2998"
+Action.c(269): Notify: Parameter Substitution: parameter "serviceId" =  "2922"
 Action.c(269): Notify: Parameter Substitution: parameter "shopID" =  "1"
 Action.c(269): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(269): Notify: Parameter Substitution: parameter "Port" =  "56902"
@@ -687,7 +687,7 @@ Action.c(280): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
 Action.c(280): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(280): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(280): Notify: Parameter Substitution: parameter "shopID" =  "1"
-Action.c(280): Notify: Parameter Substitution: parameter "serviceId" =  "2998"
+Action.c(280): Notify: Parameter Substitution: parameter "serviceId" =  "2922"
 Action.c(280): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(280): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(280): web_url("/api/inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
@@ -699,17 +699,17 @@ Action.c(298): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(298): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(298): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(298): Notify: Parameter Substitution: parameter "File" =  "File1.txt"
-Action.c(298): Notify: Saving Parameter "FileID = 4783".
+Action.c(298): Notify: Saving Parameter "FileID = 4795".
 Action.c(298): web_submit_data("/api/ticket/file/") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(311): Notify: Saving Parameter "c_buffer = ".
 Action.c(313): Notify: Parameter Substitution: parameter "inventoryNumbers_count" =  "0"
 Action.c(315): Notify: Parameter Substitution: parameter "c_buffer" =  ""
-Action.c(315): Notify: Parameter Substitution: parameter "Text" =  "Some text 3"
-Action.c(315): Notify: Parameter Substitution: parameter "serviceNames_228" =  "Пленка выгорела(требуется замена)"
-Action.c(315): Notify: Parameter Substitution: parameter "serviceId" =  "2998"
-Action.c(315): Notify: Parameter Substitution: parameter "FileID" =  "4783"
+Action.c(315): Notify: Parameter Substitution: parameter "Text" =  "Some text 4"
+Action.c(315): Notify: Parameter Substitution: parameter "serviceNames_82" =  "Погнута рама роклы"
+Action.c(315): Notify: Parameter Substitution: parameter "serviceId" =  "2922"
+Action.c(315): Notify: Parameter Substitution: parameter "FileID" =  "4795"
 Action.c(315): Notify: Parameter Substitution: parameter "shopID" =  "1"
-Action.c(315): Notify: Saving Parameter "c_buffer = {"text":"Some text 3","header":"Пленка выгорела(требуется замена)","ticketStateId": 0,"serviceId": "2998","files": [4783],"shopId": "1"}".
+Action.c(315): Notify: Saving Parameter "c_buffer = {"text":"Some text 4","header":"Погнута рама роклы","ticketStateId": 0,"serviceId": "2922","files": [4795],"shopId": "1"}".
 c_buffer
 Action.c(347): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(347): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
@@ -718,10 +718,10 @@ Action.c(358): Notify: Parameter Substitution: parameter "Host" =  "http://learn
 Action.c(358): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(358): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(358): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(358): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 3","header":"Пленка выгорела(требуется замена)","ticketStateId": 0,"serviceId": "2998","files": [4783],"shopId": "1"}"
-Action.c(358): Notify: Saving Parameter "ID = 149481".
-Action.c(358): web_custom_request("/api/ticket/") was successful, 1457 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(372): Notify: Parameter Substitution: parameter "ID" =  "149481"
+Action.c(358): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 4","header":"Погнута рама роклы","ticketStateId": 0,"serviceId": "2922","files": [4795],"shopId": "1"}"
+Action.c(358): Notify: Saving Parameter "ID = 149492".
+Action.c(358): web_custom_request("/api/ticket/") was successful, 1433 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(372): Notify: Parameter Substitution: parameter "ID" =  "149492"
 Action.c(375): web_url("/") started  	[MsgId: MMSG-26355]
 Action.c(375): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(375): Notify: Parameter Substitution: parameter "Port" =  "56902"
@@ -792,14 +792,14 @@ Action.c(433): Notify: Parameter Substitution: parameter "Host" =  "http://learn
 Action.c(433): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(433): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(433): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(433): web_custom_request("/api/ticket") was successful, 11444 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(433): web_custom_request("/api/ticket") was successful, 12181 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(445): web_custom_request("/api/ticket") started  	[MsgId: MMSG-26355]
 Action.c(445): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(445): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(445): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(445): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(445): web_custom_request("/api/ticket") was successful, 11444 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(457): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 4.3713 Wasted Time: 0.4374).
+Action.c(445): web_custom_request("/api/ticket") was successful, 12181 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(457): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 5.5569 Wasted Time: 0.5118).
 Action.c(461): Notify: Transaction "UC01_TR04_Logout" started.
 Action.c(463): web_url("/api/logout") started  	[MsgId: MMSG-26355]
 Action.c(463): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -833,7 +833,7 @@ Action.c(472): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js
 Action.c(472): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(472): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(472): web_url("/login") was successful, 873 body bytes, 392 header bytes  	[MsgId: MMSG-26386]
-Action.c(482): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.3484 Wasted Time: 0.0466).
+Action.c(482): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.2057 Wasted Time: 0.0561).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...

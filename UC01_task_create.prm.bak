@@ -1,3 +1,17 @@
+[parameter:Domain]
+ColumnName="Col 1"
+Delimiter=","
+GenerateNewVal="EachIteration"
+OriginalValue="learning2.pflb.ru"
+OutOfRangePolicy="ContinueWithLast"
+ParamName="Domain"
+SelectNextRow="Sequential"
+StartRow="1"
+Table="Domain.dat"
+TableLocation="Local"
+Type="Table"
+auto_allocate_block_size="1"
+value_for_each_vuser=""
 [parameter:File]
 ColumnName="Col 1"
 Delimiter=","
