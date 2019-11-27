@@ -2696,7 +2696,8 @@ Action()
 		"LAST");
 
 	web_custom_request("/api/ticket/", 
-		"URL={Host}:{Port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+		"URL={Host}:{Port}/api/ticket/?state=-1,0,1,5&page=0" 
+		"&size=10",
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -2841,7 +2842,8 @@ Action()
         "LAST");
 	
 	web_url("/api/inventoryNumbers", 
-		"URL={Host}:{Port}/api/inventoryNumbers?serviceId={serviceId}&shopId={shopID}", 
+		"URL={Host}:{Port}/api/inventoryNumbers?serviceId={serviceId}" 
+		"&shopId={shopID}",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -2851,7 +2853,8 @@ Action()
 		"LAST");
 		
 	web_url("/api/inventoryNumbers", 
-		"URL={Host}:{Port}/api/inventoryNumbers?shopId={shopID}&serviceId={serviceId}&serviceId=2782&q=&page=0", 
+		"URL={Host}:{Port}/api/inventoryNumbers?shopId={shopID}" 
+		"&serviceId={serviceId}&serviceId=2782&q=&page=0",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -2884,7 +2887,10 @@ Action()
 	
 	if (atoi(lr_eval_string("{inventoryNumbers_count}")) == 0){
 		
-		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [%s],\"shopId\": \"%s\"}",
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\"," 
+		                 "\"header\":\"%s\",\"ticketStateId\": 0," 
+		                 "\"serviceId\": \"%s\",\"files\": [%s]," 
+		                 "\"shopId\": \"%s\"}",
 		   lr_eval_string("{c_buffer}"),
 		   lr_eval_string("{Text}"),
 		   lr_paramarr_idx("serviceNames", j),
@@ -2893,10 +2899,15 @@ Action()
 		   lr_eval_string("{shopID}"));
 	}
 	else {
-		inventoryNumberId_index = rand() % atoi(lr_eval_string("{inventoryNumbers_count}")) + 1;
-		lr_save_string(lr_paramarr_idx("inventoryNumbers", inventoryNumberId_index), "inventoryNumberId");
+		inventoryNumberId_index = rand() % 
+			atoi(lr_eval_string("{inventoryNumbers_count}")) + 1;
+		lr_save_string(lr_paramarr_idx("inventoryNumbers",
+		                               inventoryNumberId_index), "inventoryNumberId");
 		
-		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\",\"ticketStateId\": 0,\"serviceId\": \"%s\",\"files\": [%s],\"inventoryNumberId\": \"%s\",\"shopId\": \"%s\"}",
+		lr_param_sprintf("c_buffer", "%s{\"text\":\"%s\",\"header\":\"%s\"," 
+		                 "\"ticketStateId\": 0,\"serviceId\": \"%s\"," 
+		                 "\"files\": [%s],\"inventoryNumberId\": \"%s\"," 
+		                 "\"shopId\": \"%s\"}",
 		   lr_eval_string("{c_buffer}"),
 		   lr_eval_string("{Text}"),
 		   lr_paramarr_idx("serviceNames", j),
