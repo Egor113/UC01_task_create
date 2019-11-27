@@ -1,3 +1,2 @@
-"{"text":"Some text 5","header":"Механическое повреждение двери (д"
-"еформирована, сломаны петли)","ticketStateId": 0,"serviceId": "2866",""
-"files": [4798],"shopId": "2"}"
+"{"text":"Some text 4","header":"Нет вывоза ТБО","ticketStateId": 0,"serviceId": "2"
+"781","files": [4799],"shopId": "2"}"

@@ -2602,9 +2602,6 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
-	 
-# 29 "Action.c"
-	
 	int j;
 	int shopID_index;
 	int inventoryNumberId_index;

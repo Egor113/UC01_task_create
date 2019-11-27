@@ -1,4 +1,4 @@
-GET /api/inventoryNumbers?serviceId=2866&shopId=2 HTTP/1.1
+GET /api/inventoryNumbers?serviceId=2781&shopId=2 HTTP/1.1
 Referer: http://learning2.pflb.ru:56902/
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
 Accept-Encoding: gzip, deflate
@@ -6,5 +6,5 @@ Accept-Language: ru,en-US;q=0.7,en;q=0.3
 Accept: */*
 Connection: Keep-Alive
 Host: learning2.pflb.ru:56902
-Cookie: SESSION=a486a188-90f1-4772-86c5-f1b3ebc5200e
+Cookie: SESSION=46cd01c2-21b4-4ce2-86c0-ab2ee7aabd6d
 
