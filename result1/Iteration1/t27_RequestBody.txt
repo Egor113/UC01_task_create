@@ -1,0 +1,2 @@
+"{"text":"Some text 5","header":"Не закрываются/плохо закрываются "
+"Дверки","ticketStateId": 0,"serviceId": "2978","files": [4747],"shopId": "5"}"
