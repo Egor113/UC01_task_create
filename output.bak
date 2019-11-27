@@ -1,4 +1,4 @@
-Virtual User Script started at: 27.11.2019 14:45:34
+Virtual User Script started at: 27.11.2019 15:02:38
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.60.0 for Windows 10; build 971 (��� 09 2018 11:27:13)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -40,7 +40,7 @@ Action.c(36): Found resource "http://learning2.pflb.ru:56902/js/core/helpers.js"
 Action.c(36): Found resource "http://learning2.pflb.ru:56902/js/index.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
 Action.c(36): Found resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
 Action.c(36): web_url("/") was successful, 1043680 body bytes, 5400 header bytes  	[MsgId: MMSG-26386]
-Action.c(46): web_url("login") started  	[MsgId: MMSG-26355]
+Action.c(46): web_url("/login") started  	[MsgId: MMSG-26355]
 Action.c(46): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(46): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(46): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -54,7 +54,7 @@ Action.c(46): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in th
 Action.c(46): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(46): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
 Action.c(46): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-Action.c(46): web_url("login") was successful, 528866 body bytes, 970 header bytes  	[MsgId: MMSG-26386]
+Action.c(46): web_url("/login") was successful, 528866 body bytes, 970 header bytes  	[MsgId: MMSG-26386]
 Action.c(56): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(56): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
 Action.c(58): Notify: Transaction "UC01_TR01_Login" started.
@@ -64,15 +64,15 @@ Action.c(60): Notify: Parameter Substitution: parameter "Password" =  "123"
 Action.c(60): Notify: Parameter Substitution: parameter "Domain" =  "learning2.pflb.ru"
 Action.c(60): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(60): web_set_user was successful  	[MsgId: MMSG-26392]
-Action.c(62): web_submit_data("login_2") started  	[MsgId: MMSG-26355]
+Action.c(62): web_submit_data("/api/login") started  	[MsgId: MMSG-26355]
 Action.c(62): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(62): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(62): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(62): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(62): Notify: Parameter Substitution: parameter "Login" =  "master"
 Action.c(62): Notify: Parameter Substitution: parameter "Password" =  "123"
-Action.c(62): web_submit_data("login_2") was successful, 146 body bytes, 339 header bytes  	[MsgId: MMSG-26386]
-Action.c(75): web_url("{Domain}:{Port}_2") started  	[MsgId: MMSG-26355]
+Action.c(62): web_submit_data("/api/login") was successful, 146 body bytes, 339 header bytes  	[MsgId: MMSG-26386]
+Action.c(75): web_url("{/") started  	[MsgId: MMSG-26355]
 Action.c(75): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(75): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(75): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -105,51 +105,51 @@ Action.c(75): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is
 Action.c(75): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(75): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Action.c(75): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
-Action.c(75): web_url("{Domain}:{Port}_2") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
-Action.c(84): web_url("checkLogin") started  	[MsgId: MMSG-26355]
+Action.c(75): web_url("{/") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+Action.c(84): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
 Action.c(84): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(84): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(84): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(84): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(84): web_url("checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(94): web_url("info") started  	[MsgId: MMSG-26355]
+Action.c(84): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(94): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
 Action.c(94): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(94): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(94): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(94): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(94): web_url("info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(104): web_url("4") started  	[MsgId: MMSG-26355]
+Action.c(94): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(104): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
 Action.c(104): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(104): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(104): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(104): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(104): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
-Action.c(104): web_url("4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(113): web_url("countByState") started  	[MsgId: MMSG-26355]
+Action.c(104): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(113): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
 Action.c(113): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(113): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(113): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(113): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(113): web_url("countByState") was successful, 218 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(123): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
+Action.c(113): web_url("/api/ticket/countByState/") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(123): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
 Action.c(123): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(123): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(123): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(123): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(123): web_custom_request("ticket") was successful, 11628 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(135): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 1.2579 Wasted Time: 0.1309).
+Action.c(123): web_custom_request("/api/ticket/") was successful, 13623 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(135): Notify: Transaction "UC01_TR01_Login" ended with a "Pass" status (Duration: 1.4769 Wasted Time: 0.1314).
 Action.c(139): Notify: Transaction "UC01_TR02_Create_incident" started.
-Action.c(141): web_url("children") started  	[MsgId: MMSG-26355]
+Action.c(141): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
 Action.c(141): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(141): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(141): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(141): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(141): web_url("children") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(151): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0989 Wasted Time: 0.0221).
+Action.c(141): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(151): Notify: Transaction "UC01_TR02_Create_incident" ended with a "Pass" status (Duration: 0.0898 Wasted Time: 0.0202).
 Action.c(155): Notify: Transaction "UC01_TR03_Incident_data" started.
 Action.c(157): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(157): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(165): web_url("shops") started  	[MsgId: MMSG-26355]
+Action.c(165): web_url("/api/shops") started  	[MsgId: MMSG-26355]
 Action.c(165): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(165): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(165): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -161,19 +161,19 @@ Action.c(165): Notify: Saving Parameter "shopIDs_4 = 5".
 Action.c(165): Notify: Saving Parameter "shopIDs_5 = 1".
 Action.c(165): Notify: Saving Parameter "shopIDs_6 = 2".
 Action.c(165): Notify: Saving Parameter "shopIDs_count = 6".
-Action.c(165): web_url("shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(165): web_url("/api/shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(175): Notify: Parameter Substitution: parameter "shopIDs_count" =  "6"
-Action.c(177): Notify: Parameter Substitution: parameter "shopIDs_1" =  "-1"
-Action.c(177): Notify: Saving Parameter "shopID = -1".
-Action.c(179): web_url("shops_2") started  	[MsgId: MMSG-26355]
+Action.c(177): Notify: Parameter Substitution: parameter "shopIDs_3" =  "4"
+Action.c(177): Notify: Saving Parameter "shopID = 4".
+Action.c(179): web_url("/api/shops") started  	[MsgId: MMSG-26355]
 Action.c(179): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(179): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(179): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(179): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(179): web_url("shops_2") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(179): web_url("/api/shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(190): web_reg_save_param started  	[MsgId: MMSG-26355]
 Action.c(190): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
-Action.c(196): web_url("children_2") started  	[MsgId: MMSG-26355]
+Action.c(196): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
 Action.c(196): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(196): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(196): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
@@ -185,15 +185,15 @@ Action.c(196): Notify: Saving Parameter "name_4 = NAME1".
 Action.c(196): Notify: Saving Parameter "name_5 = Вне�\x88няя и внутренняя реклама".
 Action.c(196): Notify: Saving Parameter "name_6 = Технологическое оборудование".
 Action.c(196): Notify: Saving Parameter "name_count = 6".
-Action.c(196): web_url("children_2") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(196): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(206): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(206): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(214): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(214): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(222): web_url("treeview") started  	[MsgId: MMSG-26355]
+Action.c(222): web_url("/api/user/catalog/treeview") started  	[MsgId: MMSG-26355]
 Action.c(222): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(222): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(222): Notify: Parameter Substitution: parameter "shopID" =  "-1"
+Action.c(222): Notify: Parameter Substitution: parameter "shopID" =  "4"
 Action.c(222): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(222): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(222): Notify: Saving Parameter "serviceIdS_1 = 2782".
@@ -658,83 +658,191 @@ Action.c(222): Notify: Saving Parameter "serviceNames_229 = Требуется �
 Action.c(222): Notify: Saving Parameter "serviceNames_230 = Снять /повесить акционны�\xb9 баннер".
 Action.c(222): Notify: Saving Parameter "serviceIdS_count = 230".
 Action.c(222): Notify: Saving Parameter "serviceNames_count = 230".
-Action.c(222): web_url("treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(222): web_url("/api/user/catalog/treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(232): Notify: Parameter Substitution: parameter "serviceIdS_count" =  "230"
 Action.c(234): Notify: Parameter Substitution: parameter "serviceIdS_162" =  "2824"
 Action.c(234): Notify: Saving Parameter "serviceId = 2824".
-Action.c(236): web_url("children_3") started  	[MsgId: MMSG-26355]
+Action.c(236): web_url("/api/user/catalog/node/146/children/") started  	[MsgId: MMSG-26355]
 Action.c(236): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(236): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(236): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(236): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(236): web_url("children_3") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(246): web_url("service") started  	[MsgId: MMSG-26355]
+Action.c(236): web_url("/api/user/catalog/node/146/children/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(246): web_url("/api/user/catalog/node/146/service/") started  	[MsgId: MMSG-26355]
 Action.c(246): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(246): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(246): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(246): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(246): web_url("service") was successful, 3225 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(256): web_url("146") started  	[MsgId: MMSG-26355]
+Action.c(246): web_url("/api/user/catalog/node/146/service/") was successful, 3225 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(256): web_url("}/api/user/catalog/breadcrumbs/146") started  	[MsgId: MMSG-26355]
 Action.c(256): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(256): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(256): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(256): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(256): web_url("146") was successful, 214 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(256): web_url("}/api/user/catalog/breadcrumbs/146") was successful, 214 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(266): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(266): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(275): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
+Action.c(275): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
 Action.c(275): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(275): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(275): Notify: Parameter Substitution: parameter "serviceId" =  "2824"
-Action.c(275): Notify: Parameter Substitution: parameter "shopID" =  "-1"
+Action.c(275): Notify: Parameter Substitution: parameter "shopID" =  "4"
 Action.c(275): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(275): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(275): Warning -35060: No matches were found for the specified query: "$..services..name"  	[MsgId: MWAR-35060]
 Action.c(275): Notify: Saving Parameter "inventoryNumbers_count = 0".
-Action.c(275): web_url("inventoryNumbers") highest severity level was "warning", 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
-Action.c(285): web_url("inventoryNumbers_2") started  	[MsgId: MMSG-26355]
+Action.c(275): web_url("/api/inventoryNumbers") highest severity level was "warning", 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
+Action.c(285): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
 Action.c(285): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(285): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(285): Notify: Parameter Substitution: parameter "shopID" =  "-1"
+Action.c(285): Notify: Parameter Substitution: parameter "shopID" =  "4"
 Action.c(285): Notify: Parameter Substitution: parameter "serviceId" =  "2824"
 Action.c(285): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(285): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(285): web_url("inventoryNumbers_2") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(285): web_url("/api/inventoryNumbers") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(295): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(295): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(302): web_submit_data("file") started  	[MsgId: MMSG-26355]
+Action.c(302): web_submit_data("/api/ticket/file/") started  	[MsgId: MMSG-26355]
 Action.c(302): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(302): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(302): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(302): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(302): Notify: Parameter Substitution: parameter "File" =  "File1.txt"
-Action.c(302): Notify: Saving Parameter "FileID = 4746".
-Action.c(302): web_submit_data("file") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(302): Notify: Saving Parameter "FileID = 4759".
+Action.c(302): web_submit_data("/api/ticket/file/") was successful, 117084 body bytes, 316 header bytes, 124 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(315): Notify: Saving Parameter "c_buffer = ".
 Action.c(317): Notify: Parameter Substitution: parameter "inventoryNumbers_count" =  "0"
 Action.c(319): Notify: Parameter Substitution: parameter "c_buffer" =  ""
 Action.c(319): Notify: Parameter Substitution: parameter "Text" =  "Some text 4"
 Action.c(319): Notify: Parameter Substitution: parameter "serviceNames_162" =  "Отсутствие пломб"
 Action.c(319): Notify: Parameter Substitution: parameter "serviceId" =  "2824"
-Action.c(319): Notify: Parameter Substitution: parameter "FileID" =  "4746"
-Action.c(319): Notify: Parameter Substitution: parameter "shopID" =  "-1"
-Action.c(319): Notify: Saving Parameter "c_buffer = {"text":"Some text 4","header":"Отсутствие пломб","ticketStateId": 0,"serviceId": "2824","files": [4746],"shopId": "-1"}".
+Action.c(319): Notify: Parameter Substitution: parameter "FileID" =  "4759"
+Action.c(319): Notify: Parameter Substitution: parameter "shopID" =  "4"
+Action.c(319): Notify: Saving Parameter "c_buffer = {"text":"Some text 4","header":"Отсутствие пломб","ticketStateId": 0,"serviceId": "2824","files": [4759],"shopId": "4"}".
 c_buffer
 Action.c(343): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(343): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(354): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
+Action.c(354): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
 Action.c(354): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(354): Notify: Parameter Substitution: parameter "Port" =  "56902"
 Action.c(354): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
 Action.c(354): Notify: Parameter Substitution: parameter "Port" =  "56902"
-Action.c(354): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 4","header":"Отсутствие пломб","ticketStateId": 0,"serviceId": "2824","files": [4746],"shopId": "-1"}"
-Action.c(354): Error -26612: HTTP Status-Code=500 (Internal Server Error) for "http://learning2.pflb.ru:56902/api/ticket/"  	[MsgId: MERR-26612]
-Action.c(354): Notify: Saving Parameter "ID = ".
-Action.c(354): Error -35060: No matches were found for the specified query: "$..id"  	[MsgId: MERR-35060]
-Action.c(354): web_custom_request("ticket_2") highest severity level was "ERROR", 200 body bytes, 335 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
-Action.c(354): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Fail" status (Duration: 1.1920 Wasted Time: 0.2644).
-Action.c(354): Notify: Transaction "UC01_TR03_Incident_data" has 1 error message(s).
-Action.c(354): Notify: The 1st error message associated with transaction "UC01_TR03_Incident_data" is "Error -26612: HTTP Status-Code=500 (Internal Server Error) for "http://learning2.pflb.ru:56902/api/ticket/""
+Action.c(354): Notify: Parameter Substitution: parameter "c_buffer" =  "{"text":"Some text 4","header":"Отсутствие пломб","ticketStateId": 0,"serviceId": "2824","files": [4759],"shopId": "4"}"
+Action.c(354): Notify: Saving Parameter "ID = 149456".
+Action.c(354): web_custom_request("/api/ticket/") was successful, 985 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(368): Notify: Parameter Substitution: parameter "ID" =  "149456"
+Action.c(371): web_url("/") started  	[MsgId: MMSG-26355]
+Action.c(371): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(371): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(371): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(371): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(371): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(371): web_url("/") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+Action.c(380): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Action.c(380): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(380): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(380): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(380): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(380): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(390): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+Action.c(390): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(390): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(390): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(390): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(390): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(400): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+Action.c(400): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(400): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(400): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(400): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(400): HTML parsing not performed for Content-Type "application/json" ("ParseHtmlContentType" Runtime Setting is "TEXT"). URL="http://learning2.pflb.ru:56902/api/ticket/countByState/4"  	[MsgId: MMSG-26548]
+Action.c(400): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(409): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+Action.c(409): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(409): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(409): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(409): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(409): web_url("/api/ticket/countByState/") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(419): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+Action.c(419): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(419): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(419): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(419): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(419): web_url("/api/ticket/countByState/") was successful, 217 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(429): web_custom_request("/api/ticket") started  	[MsgId: MMSG-26355]
+Action.c(429): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(429): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(429): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(429): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(429): web_custom_request("/api/ticket") was successful, 12979 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(441): web_custom_request("/api/ticket") started  	[MsgId: MMSG-26355]
+Action.c(441): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(441): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(441): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(441): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(441): web_custom_request("/api/ticket") was successful, 12979 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(453): Notify: Transaction "UC01_TR03_Incident_data" ended with a "Pass" status (Duration: 3.9820 Wasted Time: 0.4085).
+Action.c(457): Notify: Transaction "UC01_TR04_Logout" started.
+Action.c(459): web_url("/api/logout") started  	[MsgId: MMSG-26355]
+Action.c(459): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(459): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(459): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(459): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(459): Redirecting "http://learning2.pflb.ru:56902/api/logout" (redirection depth is 0)  	[MsgId: MMSG-26694]
+Action.c(459): To location "http://learning2.pflb.ru:56902/login.html"  	[MsgId: MMSG-26693]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(459): web_url("/api/logout") was successful, 873 body bytes, 675 header bytes  	[MsgId: MMSG-26386]
+Action.c(468): web_url("/login") started  	[MsgId: MMSG-26355]
+Action.c(468): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(468): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(468): Notify: Parameter Substitution: parameter "Host" =  "http://learning2.pflb.ru"
+Action.c(468): Notify: Parameter Substitution: parameter "Port" =  "56902"
+Action.c(468): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(468): web_url("/login") was successful, 873 body bytes, 392 header bytes  	[MsgId: MMSG-26386]
+Action.c(478): Notify: Transaction "UC01_TR04_Logout" ended with a "Pass" status (Duration: 0.1333 Wasted Time: 0.0448).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...

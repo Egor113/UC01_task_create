@@ -43,7 +43,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("login", 
+	web_url("/login", 
 		"URL={Host}:{Port}/login", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -59,7 +59,7 @@ Action()
 
 	web_set_user("{Login}", "{Password}", "{Domain}:{Port}");
 	
-	web_submit_data("login_2", 
+	web_submit_data("/api/login", 
 		"Action={Host}:{Port}/api/login", 
 		"Method=POST", 
 		"TargetFrame=", 
@@ -72,7 +72,7 @@ Action()
 		"Name=rememberMe", "Value=false", ENDITEM, 
 		LAST);
 
-	web_url("{Domain}:{Port}_2", 
+	web_url("{/", 
 		"URL={Host}:{Port}/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -81,7 +81,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("checkLogin", 
+	web_url("/api/checkLogin", 
 		"URL={Host}:{Port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -91,7 +91,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("info", 
+	web_url("/api/user/info", 
 		"URL={Host}:{Port}/api/user/info", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -101,7 +101,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("4", 
+	web_url("/api/ticket/countByState/4", 
 		"URL={Host}:{Port}/api/ticket/countByState/4", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -110,7 +110,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("countByState", 
+	web_url("/api/ticket/countByState/", 
 		"URL={Host}:{Port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -120,7 +120,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_custom_request("ticket", 
+	web_custom_request("/api/ticket/", 
 		"URL={Host}:{Port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
@@ -138,7 +138,7 @@ Action()
 
 	lr_start_transaction("UC01_TR02_Create_incident");
 
-	web_url("children", 
+	web_url("/api/user/catalog/node/0/children/", 
 		"URL={Host}:{Port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -162,7 +162,7 @@ Action()
         "Scope=Body",
         "LAST");
 	
-	web_url("shops", 
+	web_url("/api/shops", 
 		"URL={Host}:{Port}/api/shops?q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -176,7 +176,7 @@ Action()
 	
 	lr_save_string(lr_paramarr_idx("shopIDs", shopID_index), "shopID");
 
-	web_url("shops_2", 
+	web_url("/api/shops", 
 		"URL={Host}:{Port}/api/shops?q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -186,14 +186,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 	
-	//delete
-	web_reg_save_param("name",
-                 "LB=\"name\":\"",
-                 "RB=\"",
-				 "Ord=All",
-				 LAST);
-	
-	web_url("children_2", 
+	web_url("/api/user/catalog/node/0/children/", 
 		"URL={Host}:{Port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -219,7 +212,7 @@ Action()
         "Scope=Body",
         "LAST");
    	
-	web_url("treeview", 
+	web_url("/api/user/catalog/treeview", 
 		"URL={Host}:{Port}/api/user/catalog/treeview?shopid={shopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -233,7 +226,7 @@ Action()
 	
 	lr_save_string(lr_paramarr_idx("serviceIdS", j), "serviceId");
 		
-	web_url("children_3", 
+	web_url("/api/user/catalog/node/146/children/", 
 		"URL={Host}:{Port}/api/user/catalog/node/146/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -243,7 +236,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("service", 
+	web_url("/api/user/catalog/node/146/service/", 
 		"URL={Host}:{Port}/api/user/catalog/node/146/service/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -253,7 +246,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("146", 
+	web_url("}/api/user/catalog/breadcrumbs/146", 
 		"URL={Host}:{Port}/api/user/catalog/breadcrumbs/146", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -272,7 +265,7 @@ Action()
         "Scope=Body",
         "LAST");
 	
-	web_url("inventoryNumbers", 
+	web_url("/api/inventoryNumbers", 
 		"URL={Host}:{Port}/api/inventoryNumbers?serviceId={serviceId}&shopId={shopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -281,8 +274,8 @@ Action()
 		"Snapshot=t19.inf", 
 		"Mode=HTML", 
 		LAST);
-	
-	web_url("inventoryNumbers_2", 
+		
+	web_url("/api/inventoryNumbers", 
 		"URL={Host}:{Port}/api/inventoryNumbers?shopId={shopID}&serviceId={serviceId}&serviceId=2782&q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -299,7 +292,7 @@ Action()
         "Scope=Body",
         "LAST");
 	
-	web_submit_data("file", 
+	web_submit_data("/api/ticket/file/", 
 		"Action={Host}:{Port}/api/ticket/file/", 
 		"Method=POST", 
 		"EncType=multipart/form-data", 
@@ -351,7 +344,7 @@ Action()
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
-	web_custom_request("ticket_2", 
+	web_custom_request("/api/ticket/", 
 		"URL={Host}:{Port}/api/ticket/", 
 		"Method=POST", 
 		"TargetFrame=", 
@@ -368,11 +361,7 @@ Action()
      fprintf (FileVarriable, "%s \n", lr_eval_string("{ID}")); 
      fclose (FileVarriable);
 	
-	//web_revert_auto_header("X-Requested-With");
-
-	//lr_think_time(7);
-
-	web_url("{Domain}:{Port}_3", 
+	web_url("/", 
 		"URL={Host}:{Port}/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -381,7 +370,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("checkLogin_2", 
+	web_url("/api/checkLogin", 
 		"URL={Host}:{Port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -391,7 +380,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("info_2", 
+	web_url("/api/user/info", 
 		"URL={Host}:{Port}/api/user/info", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -401,7 +390,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("4_2", 
+	web_url("/api/ticket/countByState/4", 
 		"URL={Host}:{Port}/api/ticket/countByState/4", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -410,7 +399,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("countByState_2", 
+	web_url("/api/ticket/countByState/", 
 		"URL={Host}:{Port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -420,7 +409,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("countByState_3", 
+	web_url("/api/ticket/countByState/", 
 		"URL={Host}:{Port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -430,7 +419,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_custom_request("ticket_3", 
+	web_custom_request("/api/ticket", 
 		"URL={Host}:{Port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
@@ -442,7 +431,7 @@ Action()
 		"EncType=application/json; charset=utf-8", 
 		LAST);
 
-	web_custom_request("ticket_4", 
+	web_custom_request("/api/ticket", 
 		"URL={Host}:{Port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
@@ -460,7 +449,7 @@ Action()
 
 	lr_start_transaction("UC01_TR04_Logout");
 
-	web_url("logout", 
+	web_url("/api/logout", 
 		"URL={Host}:{Port}/api/logout", 
 		"TargetFrame=", 
 		"Resource=0", 
@@ -469,7 +458,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
-	web_url("login_3", 
+	web_url("/login", 
 		"URL={Host}:{Port}/login", 
 		"TargetFrame=", 
 		"Resource=0", 
